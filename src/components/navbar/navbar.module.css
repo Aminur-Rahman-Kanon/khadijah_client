@@ -1,0 +1,34 @@
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    list-style: none;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.item {
+
+}
+
+.link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgb(77, 77, 77);
+    transition: color 0.7s ease;
+}
+
+.link:hover {
+    color: black;
+}

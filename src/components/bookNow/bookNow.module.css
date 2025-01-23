@@ -1,0 +1,21 @@
+.main {
+    width: 100%;
+}
+
+.link {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #f9aab4;
+    background-color: #f9aab4;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: background-color 0.9s ease;
+}
+
+.link:hover {
+    background-color: #f894a2;
+}
