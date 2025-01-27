@@ -7,6 +7,8 @@ import AdditionalTopbar from './components/additionalTopbar/additionalTopbar';
 import { stickyScrollHandler } from './utilities/utilities';
 import { connect } from 'react-redux';
 import Sidedrawer from './components/sidedrawer/sidedrawer';
+import BookAppointment from './pages/bookAppointment/bookAppointment';
+import Footer from './components/footer/footer';
 
 function App({ mobileWidth }) {
 
@@ -28,8 +30,10 @@ function App({ mobileWidth }) {
             <Topbar />
         </div>
         <Routes>
-            <Route path='/' element={<Homepage />}/>    
+            <Route path='/' element={<Homepage />}/>
+            <Route path='/book-appointment' element={<BookAppointment />} />
         </Routes>
+        <Footer />
       </div>
   );
 }

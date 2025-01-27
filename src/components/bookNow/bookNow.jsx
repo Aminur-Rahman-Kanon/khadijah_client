@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const BookNow = () => {
     return (
         <div className={styles.main}>
-            <Link to={'#'} className={styles.link}>
+            <Link to={'/book-appointment'} className={styles.link}>
                 book now
             </Link>
         </div>

@@ -3,6 +3,7 @@ import styles from './homepage.module.css';
 import Banner from '../../components/homepage/banner/banner';
 import SecondElement from '../../components/homepage/secondElement/secondElement';
 import ThirdElement from '../../components/homepage/thirdElement/thirdElement';
+import Services from '../../components/homepage/services/services';
 
 const Homepage = () => {
   return (
@@ -10,6 +11,7 @@ const Homepage = () => {
             <Banner />
             <SecondElement />
             <ThirdElement />
+            <Services />
         </div>
   )
 }
