@@ -1,53 +1,69 @@
-export const stickyScrollHandler = (el) => {
-    // const topbar = document.getElementById('topbar');
-    console.log(el)
-    // const topbarOffset = topbar.offsetTop;
-//     if (topbar){
-//         const additionalBanner = topbar.children[0];
-//         const topbarBtns = topbar.children[2];
-//         const phoneNumber = topbarBtns.children[0];
-//         const logo = topbarBtns.children[1].children[0].children[0];
-//         const drawtoggle = topbarBtns.children[2];
-//         // const getQuoteLink = topbarBtns.children[1].children[0].children[1];
-//         const hLine1 = topbar.children[1];
-//         const hLine2 = topbar.children[3];
-//         const bottomHeading = topbar.children[4];
+import logo1 from '../assets/logo/logo_1.png';
+import logo2 from '../assets/logo/logo_2.png';
+import face from '../assets/logo/face.png';
 
-//         //effect while scroll for first time
-//         if (window.scrollY > topbarOffset){
-//             topbar.style.backgroundColor = '#ffffffde';
-//             // phoneNumber.style.display = 'none';
-//             phoneNumber.style.color = 'black';
-//             drawtoggle.style.color = 'black';
-//             hLine1.style.display = 'none';
-//             additionalBanner.style.display = 'none'
-//             logo.src = logoImg2;
-//             hLine2.style.display = 'none';
-//             bottomHeading.style.display = 'none';
-//         }
-//         else {
-//             if (window.innerWidth <= 767){
-//                 topbar.style.backgroundColor = '#00000091';
-//                 additionalBanner.style.display = 'none'
-//                 logo.src = logoImg1;
-//                 drawtoggle.style.color = 'white';
-//                 hLine1.style.display = 'none';
-//                 hLine2.style.display = 'block';
-//                 bottomHeading.style.display = 'none';
-//                 phoneNumber.style.display = 'flex';
-//                 phoneNumber.style.color = 'white';
-//             }
-//             else {
-//                 topbar.style.backgroundColor = '#00000091';
-//                 additionalBanner.style.display = 'flex';
-//                 phoneNumber.style.display = 'none';
-//                 drawtoggle.style.color = 'white';
-//                 additionalBanner.children[0].children[0].style.color = 'white';
-//                 logo.src = logoImg1;
-//                 hLine1.style.display = 'block';
-//                 hLine2.style.display = 'block';
-//                 bottomHeading.style.display = 'flex';
-//             }
-//         }
-//     }
+
+export const stickyScrollHandler = (topbar, mobileWidth) => {
+    const topbarOffset = topbar.offsetTop;
+    console.log(mobileWidth);
+    
+    
+    if (topbar){
+        const topTopbar = topbar.children[0];
+        const bottomTopbar = topbar.children[1];
+        const logo = bottomTopbar.children[0].children[0].children[0];
+        const navbarLinks = bottomTopbar.children[1].children[0].children[0];
+
+        //effect while scroll for first time
+        if (window.scrollY > topbarOffset){
+            if (window.innerWidth <= 767){
+                logo.src = face;
+                topbar.style.backgroundColor = '#eeeeee00';
+                topTopbar.style.display = 'none';
+                bottomTopbar.style.backgroundColor = '#74747480';
+                navbarLinks.style.color = 'white';
+            }
+            else {
+                logo.src = logo2;
+                topbar.style.backgroundColor = '#eeeeee00';
+                topTopbar.style.display = 'none';
+                bottomTopbar.style.backgroundColor = '#74747480';
+                navbarLinks.style.color = 'white';
+            }
+        }
+        else {
+            if (window.innerWidth <= 767){
+                logo.src = face;
+                topbar.style.backgroundColor = '#eeeeee00';
+                topTopbar.style.display = 'none';
+                bottomTopbar.style.backgroundColor = '#74747480';
+                navbarLinks.style.color = 'rgb(77, 77, 77)';
+            }
+            else {
+                logo.src = logo1;
+                topbar.style.backgroundColor = '#eeeeee';
+                topTopbar.style.display = 'flex';
+                bottomTopbar.style.backgroundColor = 'white';
+                navbarLinks.style.color = 'rgb(77, 77, 77)';
+            }
+        }
+    }
 };
+
+export const logoChangeHandler = (topbar) => {
+    const maxWidth = 767;
+    const topbarOffset = topbar.offsetTop;
+    const logo = topbar.children[1].children[0].children[0].children[0];
+
+    if (window.innerWidth <= maxWidth){
+        logo.src = face;
+    }
+    else {
+        if (window.scrollY > topbarOffset){
+            logo.src = logo2;
+        }
+        else {
+            logo.src = logo1
+        }
+    }
+}

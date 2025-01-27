@@ -6,6 +6,7 @@
     background-color: rgb(238, 238, 238);
     padding: 10px;
     box-sizing: border-box;
+    transition: all 1s ease;
 }
 
 .container {
@@ -53,4 +54,10 @@
 
 .link:hover {
     color: #fd8998;
+}
+
+@media (max-width: 767px) {
+    .main {
+        display: none;
+    }
 }

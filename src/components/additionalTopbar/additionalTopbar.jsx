@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './additionalTopbar.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPhone, faMapPin } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faXTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Sociallink from '../socialLink/socialLink';
 
 const AdditionalTopbar = () => {
   return (
@@ -32,26 +32,7 @@ const AdditionalTopbar = () => {
                 </div>
             </div>
             <div className={styles.container}>
-                <div className={styles.item}>
-                    <a href='#' className={styles.link}>
-                        <FontAwesomeIcon icon={faFacebook} className={styles.svg}/>
-                    </a>
-                </div>
-                <div className={styles.item}>
-                    <a href='#' className={styles.link}>
-                        <FontAwesomeIcon icon={faXTwitter} className={styles.svg}/>
-                    </a>
-                </div>
-                <div className={styles.item}>
-                    <a href='#' className={styles.link}>
-                        <FontAwesomeIcon icon={faInstagram} className={styles.svg}/>
-                    </a>
-                </div>
-                <div className={styles.item}>
-                    <a href='#' className={styles.link}>
-                        <FontAwesomeIcon icon={faLinkedin} className={styles.svg}/>
-                    </a>
-                </div>
+                <Sociallink style={'smallPink'}/>
             </div>
         </div>
   )

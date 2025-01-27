@@ -1,27 +1,52 @@
 .main {
-    position: sticky;
-    top: 0;
-    left: 0;
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    transition: background-color 1s ease;
 }
 
 .logo {
     width: 200px;
-    /* height: 100px; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .navbar {
+    display: flex;
 
 }
 
 .orderLink {
     width: 200px;
+}
+
+.drawToggle {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .main {
+        background-color: #eeeeee00;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .orderLink {
+        display: none;
+    }
+
+    .drawToggle {
+        display: flex;
+    }
 }

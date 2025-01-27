@@ -13,10 +13,12 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    color: rgb(77, 77, 77);
 }
 
 .item {
-
+    color: inherit;
+    transition: color 0.7s ease;
 }
 
 .link {
@@ -25,10 +27,27 @@
     font-family: inherit;
     font-size: 0.9rem;
     font-weight: 600;
-    color: rgb(77, 77, 77);
-    transition: color 0.7s ease;
+    color: inherit;
 }
 
-.link:hover {
+.item:hover {
     color: black;
+}
+
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .link {
+        font-size: 1.2rem;
+    }
+
+    .item {
+        color: lightgray;
+    }
+
+    .item:hover {
+        color: white;
+    }
 }

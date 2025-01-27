@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
 
+/* primary color: */
+/* #f9aab4 */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -17,6 +20,14 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  padding-top: 1px;
+  padding-top: 4px;
   box-sizing: border-box;
+  background-color: #eeeeee;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .topbar {
+    background-color: #eeeeee00;
+  }
 }
