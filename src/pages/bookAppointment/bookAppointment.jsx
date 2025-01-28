@@ -21,7 +21,7 @@ const BookAppointment = () => {
                 <Progress />
             </div>
             <div className={styles.displayService}>
-                {/* <Service /> */}
+                <Service />
                 <SelectDate />
             </div>
         </div>
