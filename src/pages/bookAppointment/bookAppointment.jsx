@@ -3,6 +3,7 @@ import styles from './bookAppointment.module.css';
 import bg from '../../assets/bookAppointment/bookAppointment_bg.jpg';
 import Progress from './progress/progress';
 import Service from "./service/service";
+import SelectDate from "./selectDate/selectDate";
 
 const BookAppointment = () => {
 
@@ -20,7 +21,8 @@ const BookAppointment = () => {
                 <Progress />
             </div>
             <div className={styles.displayService}>
-                <Service />
+                {/* <Service /> */}
+                <SelectDate />
             </div>
         </div>
     )

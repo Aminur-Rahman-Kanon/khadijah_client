@@ -42,3 +42,19 @@
     color: black;
     text-transform: capitalize;
 }
+
+.footer {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.btnContainer {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

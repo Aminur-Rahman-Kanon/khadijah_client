@@ -67,7 +67,7 @@
 
 .displayService {
     width: 100%;
-    margin: 10px auto;
+    margin: 10px auto 50px;
     padding: 30px;
     box-sizing: border-box;
     display: flex;
@@ -78,5 +78,9 @@
 @media (max-width: 767px) {
     .wrapper {
         margin-top: unset;
+    }
+
+    .displayService {
+        padding: 10px;
     }
 }

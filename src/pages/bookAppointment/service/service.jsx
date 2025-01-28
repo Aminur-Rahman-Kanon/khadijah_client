@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './service.module.css';
+import Button from "../../../components/button/button";
 
 const Service = () => {
     return (
@@ -15,6 +16,11 @@ const Service = () => {
                     <option className={styles.option} value={'Massage therapy'}>Massage therapy</option>
                     <option className={styles.option} value={'Physiotherapy'}>Physiotherapy</option>
                 </select>
+            </div>
+            <div className={styles.footer}>
+                <div className={styles.btnContainer}>
+                    <Button text={'Next'}/>
+                </div>
             </div>
         </div>
     )
