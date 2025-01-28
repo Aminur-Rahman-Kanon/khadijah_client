@@ -5,8 +5,6 @@ import face from '../assets/logo/face.png';
 
 export const stickyScrollHandler = (topbar, mobileWidth) => {
     const topbarOffset = topbar.offsetTop;
-    console.log(mobileWidth);
-    
     
     if (topbar){
         const topTopbar = topbar.children[0];

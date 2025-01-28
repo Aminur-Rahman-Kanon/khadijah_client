@@ -12,7 +12,7 @@ const AdditionalTopbar = () => {
                     <div className={styles.icon} style={{color: '#f9aab4'}}>
                         <FontAwesomeIcon icon={faClock} className={styles.svg}/>
                     </div>
-                    <span className={styles.text}>Mon-Fri: 8:00 - 20:00</span>
+                    <span className={styles.text}>Mon-Fri: 10:00 - 20:00</span>
                 </div>
                 <div className={styles.item}>
                     <a href="tel:00447950999729" className={styles.link}>

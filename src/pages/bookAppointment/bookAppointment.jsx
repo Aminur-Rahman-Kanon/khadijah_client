@@ -4,6 +4,7 @@ import bg from '../../assets/bookAppointment/bookAppointment_bg.jpg';
 import Progress from './progress/progress';
 import Service from "./service/service";
 import SelectDate from "./selectDate/selectDate";
+import SelectTime from "./selectime/selectTime";
 
 const BookAppointment = () => {
 
@@ -23,6 +24,7 @@ const BookAppointment = () => {
             <div className={styles.displayService}>
                 <Service />
                 <SelectDate />
+                <SelectTime />
             </div>
         </div>
     )

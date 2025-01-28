@@ -5,7 +5,6 @@ import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
 import { connect } from "react-redux";
 
 const Drawtoggle = (state) => {
-    console.log(state.sidedrawer);
     
     return (
         <div className={styles.wrapper} onClick={state.toggleSidedrawer}>
