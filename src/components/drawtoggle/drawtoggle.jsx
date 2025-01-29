@@ -3,6 +3,7 @@ import styles from './drawtoggle.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
 import { connect } from "react-redux";
+import { actions } from "../../redux/actions";
 
 const Drawtoggle = (state) => {
     
@@ -21,7 +22,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        toggleSidedrawer: () => dispatch({ type: 'toggleSidedrawer' })
+        toggleSidedrawer: () => dispatch({ type: actions.TOGGLE_SIDEDRAWER })
     }
 }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import './selectDate.css';
 import { Calendar } from 'react-calendar';
-import Button from '../../../components/button/button';
 
 function SelectDate ({ selectedDate, serviceId, bookedDate, changeSelectedDate }) {
     return (
@@ -30,11 +29,6 @@ function SelectDate ({ selectedDate, serviceId, bookedDate, changeSelectedDate }
                             onClickDay={(value) => {
                                 changeSelectedDate(value.toDateString());
                             }}/>
-            </div>
-            <div className='btn-container'>
-                <div className='btn'>
-                    <Button text={'Go back'}/>
-                </div>
             </div>
         </div>
     )

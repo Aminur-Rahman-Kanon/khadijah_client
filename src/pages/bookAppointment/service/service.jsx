@@ -1,8 +1,11 @@
 import React from "react";
 import styles from './service.module.css';
 import Button from "../../../components/button/button";
+import { connect } from "react-redux";
+import { actions } from "../../../redux/actions";
 
-const Service = () => {
+const Service = ({ switchToElements }) => {
+    console.log(switchToElements);
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>
@@ -19,11 +22,19 @@ const Service = () => {
             </div>
             <div className={styles.footer}>
                 <div className={styles.btnContainer}>
-                    <Button text={'Next'}/>
+                    <Button text={'Next'} handler={() => switchToElements('time')}/>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Service;
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        switchToElements: (element) => dispatch({ type: actions.SWITCH_TO_ELEMENTS, payload: element })
+    }
+}
+
+export default connect(null, mapDispatchToProps) (Service);

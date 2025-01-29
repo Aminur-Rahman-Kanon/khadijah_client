@@ -76,6 +76,15 @@
     align-items: center;
 }
 
+.service {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
 @media (max-width: 767px) {
     .wrapper {
         margin-top: unset;

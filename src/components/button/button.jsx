@@ -5,7 +5,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const Button = ({ isPending, text, handler }) => {
     return (
-        <button className={styles.btn}>
+        <button className={styles.btn} onClick={handler}>
             {
                 isPending ? <FontAwesomeIcon icon={faSpinner} spinPulse className={styles.icon} />
                 :

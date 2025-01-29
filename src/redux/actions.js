@@ -1,0 +1,4 @@
+export const actions = {
+    TOGGLE_SIDEDRAWER: 'TOGGLE_SIDEDRAWER',
+    SWITCH_TO_ELEMENTS: 'SWITCH_TO_ELEMENTS'
+}

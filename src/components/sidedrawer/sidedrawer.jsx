@@ -4,6 +4,7 @@ import Logo from "../logo/logo";
 import Navbar from "../navbar/navbar";
 import Sociallink from "../socialLink/socialLink";
 import { connect } from "react-redux";
+import { actions } from "../../redux/actions";
 
 const Sidedrawer = (state) => {
 
@@ -38,7 +39,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        toggleSidedrawer: () => dispatch({ type: 'toggleSidedrawer' })
+        toggleSidedrawer: () => dispatch({ type: actions.TOGGLE_SIDEDRAWER })
     }
 }
 

@@ -1,16 +1,27 @@
+import { actions } from "./actions";
+
 const INITIAL_STATE = {
     mobileWidth: 767,
-    sidedrawer: false
+    sidedrawer: false,
+    serviceElement: 'service'
 }
 
 export const reducer = (state = INITIAL_STATE, action) => {
+
     console.log(action);
     
+
     switch (action.type){
-        case 'toggleSidedrawer':
+        case actions.TOGGLE_SIDEDRAWER:
             return {
                 ...state,
                 sidedrawer: !state.sidedrawer
+            }
+        
+        case actions.SWITCH_TO_ELEMENTS:
+            return {
+                ...state,
+                serviceElement: action.payload
             }
         
         default:

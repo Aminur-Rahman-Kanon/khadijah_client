@@ -5,8 +5,14 @@ import Progress from './progress/progress';
 import Service from "./service/service";
 import SelectDate from "./selectDate/selectDate";
 import SelectTime from "./selectime/selectTime";
+import Details from "./details/details";
+import { connect } from "react-redux";
+import StripePayment from "./payment/paymentGateway/stripePayment";
 
-const BookAppointment = () => {
+const BookAppointment = ({serviceElement}) => {
+
+    console.log(serviceElement);
+    
 
     return (
         <div className={styles.wrapper}>
@@ -22,12 +28,28 @@ const BookAppointment = () => {
                 <Progress />
             </div>
             <div className={styles.displayService}>
-                <Service />
-                <SelectDate />
-                <SelectTime />
+                <div style={serviceElement === 'service' ? {display:'flex'} : {display: 'none'}} className={styles.service}>
+                    <Service />
+                </div>
+                <div style={serviceElement === 'time' ? {display:'flex'} : {display: 'none'}} className={styles.service}>
+                    <SelectDate />
+                    <SelectTime />
+                </div>
+                <div style={serviceElement === 'details' ? {display:'flex'} : {display: 'none'}} className={styles.service}>
+                    <Details />
+                </div>
+                <div style={serviceElement === 'payment' ? {display:'flex'} : {display: 'none'}} className={styles.service}>
+                    {/* <StripePayment /> */}
+                </div>
             </div>
         </div>
     )
 }
 
-export default BookAppointment;
+const mapStateToProps = (state) => {
+    return {
+        serviceElement: state.serviceElement
+    }
+}
+
+export default connect(mapStateToProps) (BookAppointment);
