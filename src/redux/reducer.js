@@ -8,9 +8,6 @@ const INITIAL_STATE = {
 
 export const reducer = (state = INITIAL_STATE, action) => {
 
-    console.log(action);
-    
-
     switch (action.type){
         case actions.TOGGLE_SIDEDRAWER:
             return {

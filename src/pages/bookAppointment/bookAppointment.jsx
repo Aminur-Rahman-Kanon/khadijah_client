@@ -7,13 +7,10 @@ import SelectDate from "./selectDate/selectDate";
 import SelectTime from "./selectime/selectTime";
 import Details from "./details/details";
 import { connect } from "react-redux";
-import StripePayment from "./payment/paymentGateway/stripePayment";
+import Payment from "./payment/payment";
 
 const BookAppointment = ({serviceElement}) => {
-
-    console.log(serviceElement);
     
-
     return (
         <div className={styles.wrapper}>
             <div className={styles.bgWrapper}>
@@ -39,7 +36,7 @@ const BookAppointment = ({serviceElement}) => {
                     <Details />
                 </div>
                 <div style={serviceElement === 'payment' ? {display:'flex'} : {display: 'none'}} className={styles.service}>
-                    {/* <StripePayment /> */}
+                    <Payment />
                 </div>
             </div>
         </div>

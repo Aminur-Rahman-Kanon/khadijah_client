@@ -2,14 +2,34 @@ import React, { useEffect, useState } from "react";
 import styles from './progress.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from '@fortawesome/free-regular-svg-icons';
+import { connect } from "react-redux";
 
-const Progress = () => {
+const elIndex = {
+    service: 1, time: 2, details: 3, payment: 4, done: 5
+}
 
+const Progress = ({ serviceElement }) => {
+
+
+    console.log(serviceElement);
+    
     const [innerWidth, setInnerWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         window.addEventListener('resize', () => setInnerWidth(window.innerWidth))
     }, [])
+
+    useEffect(() => {
+        const parent = document.querySelector(`.${styles.container}`);
+        const  elements = parent.children;
+        console.log(elements);
+        
+        
+        for (let i=0; i<elIndex[serviceElement]; i++){
+            elements[i].children[1].style.backgroundColor = '#f9aab4'
+        }
+        
+    }, [serviceElement])
 
     const displayProgress = innerWidth <= 767 ? <div style={{gap: '5px'}} className={styles.container}>
         <div className={styles.circleContainer}>
@@ -73,4 +93,10 @@ const Progress = () => {
     )
 }
 
-export default Progress;
+const mapStateToProps = (state) => {
+    return {
+        serviceElement: state.serviceElement
+    }
+}
+
+export default connect(mapStateToProps) (Progress);

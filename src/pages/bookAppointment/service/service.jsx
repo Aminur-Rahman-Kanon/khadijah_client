@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { actions } from "../../../redux/actions";
 
 const Service = ({ switchToElements }) => {
-    console.log(switchToElements);
+    
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>

@@ -1,41 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import React from 'react';
 import styles from './payment.module.css';
-
-const cardStyle = {
-    hidePostalCode: true,
-    iconStyle: 'solid',
-    style: {
-      base: {
-        color: "#7db2ed",
-        fontFamily: 'Arial, sans-serif',
-        fontSmoothing: "antialiased",
-        fontSize: "16px",
-        "::placeholder": {
-          color: "lightgray"
-        }
-      },
-      invalid: {
-        fontFamily: 'Arial, sans-serif',
-        color: "#fa755a",
-        iconColor: "#fa755a"
-      }
-    }
-  };
-
+import PaymentGateway from '../../../components/paymentGateway/paymentGateway';
 
 const Payment = () => {
 
-    const [success, setSuccess] = useState(false);
-    const stripe = useStripe();
-    const elements = useElements();
+    const amount = '£120';
 
     return (
-        <>
-        <div className={styles.paymentCardContainer}>
-            {stripe ? <CardElement options={cardStyle} /> : <p style={{margin: '0', color: 'lightgray'}}>Loading failed</p>}
+        <div className={styles.wrapper}>
+            <div className={styles.header}>
+                <h2 className={styles.headingLargeBlack}>Great, that will be {amount}.</h2>
+            </div>
+            <div className={styles.payment}>
+                <PaymentGateway />
+            </div>
         </div>
-        </>
     )
 }
 
