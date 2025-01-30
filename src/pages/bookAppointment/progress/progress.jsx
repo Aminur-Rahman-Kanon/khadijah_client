@@ -9,9 +9,6 @@ const elIndex = {
 }
 
 const Progress = ({ serviceElement }) => {
-
-
-    console.log(serviceElement);
     
     const [innerWidth, setInnerWidth] = useState(window.innerWidth);
 
@@ -22,8 +19,6 @@ const Progress = ({ serviceElement }) => {
     useEffect(() => {
         const parent = document.querySelector(`.${styles.container}`);
         const  elements = parent.children;
-        console.log(elements);
-        
         
         for (let i=0; i<elIndex[serviceElement]; i++){
             elements[i].children[1].style.backgroundColor = '#f9aab4'
