@@ -6,7 +6,9 @@ import Button from '../button/button';
 const PaymentGateway = () => {
     return (
         <div className='wrapper'>
-            <form className='formContainer'>
+            <form className='formContainer' onSubmit={(e) => {
+                e.preventDefault();
+            }}>
                 <div className='inputGroup'>
                     <div className='field'>
                         <span className='label'>First name</span>

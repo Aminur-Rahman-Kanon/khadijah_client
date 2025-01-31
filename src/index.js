@@ -15,7 +15,7 @@ const options = {
   mode: 'payment',
   amount: 1099,
   currency: 'usd',
-  // payment_method_configuration: 'pmc_1QmR55Fktu5Lttz3Kve6M9QL',
+  payment_method_configuration: 'pmc_1QmR55Fktu5Lttz3Kve6M9QL',
   // Fully customizable with appearance API.
   appearance: {
     /*...*/

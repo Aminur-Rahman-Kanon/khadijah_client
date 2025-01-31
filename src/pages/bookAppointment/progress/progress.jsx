@@ -16,14 +16,19 @@ const Progress = ({ serviceElement }) => {
         window.addEventListener('resize', () => setInnerWidth(window.innerWidth))
     }, [])
 
+    
     useEffect(() => {
         const parent = document.querySelector(`.${styles.container}`);
         const  elements = parent.children;
+        const startIndex = elIndex[serviceElement];
         
-        for (let i=0; i<elIndex[serviceElement]; i++){
+        for (let i=0; i<startIndex; i++){
             elements[i].children[1].style.backgroundColor = '#f9aab4'
         }
-        
+
+        for (let i = startIndex; i<elements.length; i++){
+            elements[i].children[1].style.backgroundColor = 'lightgray';
+        }
     }, [serviceElement])
 
     const displayProgress = innerWidth <= 767 ? <div style={{gap: '5px'}} className={styles.container}>
