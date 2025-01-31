@@ -8,6 +8,7 @@ import SelectTime from "./selectime/selectTime";
 import Details from "./details/details";
 import { connect } from "react-redux";
 import Payment from "./payment/payment";
+import PaymentSuccess from "./paymentSuccess/paymentSuccess";
 
 const BookAppointment = ({serviceElement}) => {
     
@@ -37,6 +38,9 @@ const BookAppointment = ({serviceElement}) => {
                 </div>
                 <div style={serviceElement === 'payment' ? {display:'flex'} : {display: 'none'}} className={styles.service}>
                     <Payment />
+                </div>
+                <div style={serviceElement === 'done' ? {display:'flex'} : {display: 'none'}} className={styles.service}>
+                    <PaymentSuccess />
                 </div>
             </div>
         </div>

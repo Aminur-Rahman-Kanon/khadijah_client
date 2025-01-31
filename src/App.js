@@ -9,6 +9,8 @@ import { connect } from 'react-redux';
 import Sidedrawer from './components/sidedrawer/sidedrawer';
 import BookAppointment from './pages/bookAppointment/bookAppointment';
 import Footer from './components/footer/footer';
+import { ToastContainer, Bounce } from 'react-toastify';
+
 
 function App({ mobileWidth }) {
 
@@ -22,6 +24,19 @@ function App({ mobileWidth }) {
 
   return (
       <div className="app">
+        <ToastContainer
+                      position="top-right"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick={false}
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="light"
+                      transition={Bounce}
+                      />
         <div className='sidedrawer'>
           <Sidedrawer />
         </div>
