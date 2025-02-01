@@ -13,6 +13,11 @@
     transition: background-color 0.7s ease;
 }
 
+.btn:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
 .btn:hover {
     background-color: #f78b99;
 }

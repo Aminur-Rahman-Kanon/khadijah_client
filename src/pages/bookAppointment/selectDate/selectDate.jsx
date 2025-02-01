@@ -1,8 +1,11 @@
 import React from 'react';
 import './selectDate.css';
 import { Calendar } from 'react-calendar';
+import { connect } from 'react-redux';
+import { actions } from '../../../redux/actions';
 
-function SelectDate ({ selectedDate, serviceId, bookedDate, changeSelectedDate }) {
+function SelectDate ({ userInput, setUserInput }) {
+
     return (
         <div className="calender-main-container">
             <h2 className='headingLargeBlack'>Please choose a date</h2>
@@ -13,11 +16,14 @@ function SelectDate ({ selectedDate, serviceId, bookedDate, changeSelectedDate }
                             nextAriaLabel="Go to next month"
                             prevAriaLabel="Go to prev month"
                             showNeighboringMonth={false}
-                            tileClassName={({date}) => date.getDay() === 0 ? 'sunday' : null}
+                            tileClassName={({date}) => {
+                                return userInput.date === date.toDateString() ? 'react-calendar__month-view__days__day active' : '.react-calendar__month-view__days__day'
+                            }}
                             tileDisabled={({date, view}) => {
-                                if (date.getDay() === 0){
-                                    return date.getDate();
-                                }
+                                return date.getDay() === 0 ? 'sunday' : null
+                                // if (date.getDay() === 0){
+                                //     // return date.getDate();
+                                // }
 
                                 // return bookedDate.some(booking => {
                                 //     const bookedDates = new Date(booking);
@@ -27,11 +33,23 @@ function SelectDate ({ selectedDate, serviceId, bookedDate, changeSelectedDate }
                                 // });
                             }}
                             onClickDay={(value) => {
-                                changeSelectedDate(value.toDateString());
+                                setUserInput(value.toDateString());
                             }}/>
             </div>
         </div>
     )
 }
 
-export default SelectDate;
+const mapStateToProps = state => {
+    return {
+        userInput: state.userInput
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        setUserInput: (value) => dispatch({ type: actions.selectDate, payload: value })
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (SelectDate);

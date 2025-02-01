@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from './bookAppointment.module.css';
 import bg from '../../assets/bookAppointment/bookAppointment_bg.jpg';
 import Progress from './progress/progress';
@@ -11,6 +11,10 @@ import Payment from "./payment/payment";
 import PaymentSuccess from "./paymentSuccess/paymentSuccess";
 
 const BookAppointment = ({serviceElement}) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [serviceElement])
     
     return (
         <div className={styles.wrapper}>

@@ -21,14 +21,31 @@ const Progress = ({ serviceElement }) => {
         const parent = document.querySelector(`.${styles.container}`);
         const  elements = parent.children;
         const startIndex = elIndex[serviceElement];
-        
-        for (let i=0; i<startIndex; i++){
-            elements[i].children[1].style.backgroundColor = '#f9aab4'
-        }
 
-        for (let i = startIndex; i<elements.length; i++){
-            elements[i].children[1].style.backgroundColor = 'lightgray';
+        if (innerWidth >= 767){
+            for (let i=0; i<startIndex; i++){
+                elements[i].children[1].style.backgroundColor = '#f9aab4'
+            }
+    
+            for (let i = startIndex; i<elements.length; i++){
+                elements[i].children[1].style.backgroundColor = 'lightgray';
+            }
         }
+        else {
+            for (let i=0; i<startIndex; i++){
+                elements[i].children[0].children[0].style.backgroundColor = '#f9aab4';
+                elements[i].children[0].children[0].style.color = '#f9aab4';
+                // elements[i].children[1].children[0].style.backgroundColor = '#f9aab4';
+                
+            }
+            
+            for (let i = startIndex; i<elements.length; i++){
+                elements[i].children[0].children[0].style.color = 'lightgray';
+                elements[i].children[0].children[0].style.backgroundColor = 'lightgray';
+                // elements[i].children[1].children[].style.backgroundColor = 'lightgray';
+            }
+        }
+        
     }, [serviceElement])
 
     const displayProgress = innerWidth <= 767 ? <div style={{gap: '5px'}} className={styles.container}>

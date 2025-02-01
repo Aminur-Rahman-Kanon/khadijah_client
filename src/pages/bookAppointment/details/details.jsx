@@ -4,13 +4,14 @@ import Button from "../../../components/button/button";
 import { connect } from "react-redux";
 import { actions } from "../../../redux/actions";
 
-const Details = ({ switchElement, switchToElements }) => {
+const Details = ({ userInput, switchElement, switchToElements }) => {
+    console.log(userInput);
+    
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <span className={styles.textSmallBlack}>You selected a booking for <span className={styles.textHighlight}>Sports Massage</span> at <span className={styles.textHighlight}>9:30 am</span> on <span className={styles.textHighlight}>Jan 30, 2025</span>. The price for the service is <span className={styles.textHighlight}>£120.00</span>.</span>
-
-                    <span className={styles.textSmallBlack}>Please provide your details in the form below to proceed with booking.</span>
+                <span className={styles.textSmallBlack}>You selected a booking for <span className={styles.textHighlight}>{userInput.service}</span> at <span className={styles.textHighlight}>{userInput.beginTime}</span> for <span className={styles.textHighlight}>{userInput.duration}</span> on <span className={styles.textHighlight}>{userInput.date}</span>. The price for the service is <span className={styles.textHighlight}>£120.00</span>.</span>
+                <span className={styles.textSmallBlack}>Please provide your details in the form below to proceed with booking.</span>
             </div>
             <div className={styles.wrapper}>
                 <div className={styles.field}>
@@ -52,7 +53,8 @@ const Details = ({ switchElement, switchToElements }) => {
 
 const mapStateToProps = (state) => {
     return {
-        switchElement: state.switchElement
+        switchElement: state.switchElement,
+        userInput: state.userInput
     }
 }
 

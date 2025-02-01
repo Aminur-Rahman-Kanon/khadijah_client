@@ -90,6 +90,11 @@ abbr {
     transition: all 0.4s ease;
 }
 
+.react-calendar__month-view__days__day.active {
+    background-color: #f9aab4;
+    color: white;
+}
+
 .react-calendar__month-view__days__day:hover {
     background-color: #f9aab4;
     color: white;

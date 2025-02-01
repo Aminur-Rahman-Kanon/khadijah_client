@@ -20,6 +20,7 @@
     letter-spacing: 1px;
     color: black;
     margin: 20px 0;
+    text-align: center;
 }
 
 .footer {
@@ -43,7 +44,6 @@
     background-color: white;
 }
 
-
 .container {
     width: 100%;
     display: grid;
@@ -64,7 +64,16 @@
     transition: all 0.7s ease;
     background-color: white;
     color: black;
-    /* font-size: ; */
+}
+
+.timeContainer:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.timeContainer:disabled:hover {
+    background-color: white;
+    color: black;
 }
 
 .timeContainer.active {
