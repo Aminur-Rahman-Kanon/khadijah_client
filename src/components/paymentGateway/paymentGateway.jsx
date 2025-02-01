@@ -26,7 +26,7 @@ const PaymentGateway = ({ serviceElement, toggleElement }) => {
         const {error} = await stripe.confirmPayment({
             elements,
             confirmParams: {
-                return_url: 'http://localhost:3000/book-appointment',
+                return_url: 'https://khadijah-client.onrender.com/book-appointment',
             },
             redirect: 'if_required'
         })
