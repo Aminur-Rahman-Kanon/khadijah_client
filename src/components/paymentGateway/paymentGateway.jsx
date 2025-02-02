@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { actions } from '../../redux/actions';
 
 
-const PaymentGateway = ({ serviceElement, toggleElement }) => {
+const PaymentGateway = ({ userInput, serviceElement, toggleElement }) => {
 
     const stripe = useStripe();
     const elements = useElements();
@@ -23,20 +23,34 @@ const PaymentGateway = ({ serviceElement, toggleElement }) => {
 
         setSpinner(true);
 
-        const {error} = await stripe.confirmPayment({
+        await stripe.confirmPayment({
             elements,
             confirmParams: {
                 return_url: 'https://khadijah-client.onrender.com/book-appointment',
             },
             redirect: 'if_required'
+        }).then(async d => {
+            await fetch('https://khadijah-server.onrender.com/confirm-payment', {
+                method:'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ userInput })
+            }).then(res => res.json()).then(resp => {
+                if (resp.status === 'success'){
+                    setSpinner(false);
+                    return toggleElement('done');
+                }
+            })
+            .catch(e => {
+                setSpinner(false);
+                return toast.error(e.message)
+            })
+            
+        }).catch(e => {
+            setSpinner(false);
+            return toast.error(e.message)
         })
-
-        setSpinner(false);
-        if (error) {
-            return toast.error(error.message)
-        };
-
-        toggleElement('done');
     }
 
     return (
@@ -79,7 +93,8 @@ const PaymentGateway = ({ serviceElement, toggleElement }) => {
 
 const mapStateToProps = (state) => {
     return {
-        serviceElement: state.serviceElement
+        serviceElement: state.serviceElement,
+        userInput: state.userInput
     }
 }
 

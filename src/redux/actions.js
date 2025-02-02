@@ -6,5 +6,5 @@ export const actions = {
     selectDuration: 'SELECT_DURATION',
     selectBeginTime: 'SELECT_BEGIN_TIME',
     selectEndTime: 'SELECT_END_TIME',
-    inputDetails: 'INPUT_DETAILS',
+    setDetails: 'SET_DETAILS',
 }

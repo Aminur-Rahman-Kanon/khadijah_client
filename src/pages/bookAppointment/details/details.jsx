@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from './details.module.css';
 import Button from "../../../components/button/button";
 import { connect } from "react-redux";
 import { actions } from "../../../redux/actions";
 
-const Details = ({ userInput, switchElement, switchToElements }) => {
-    console.log(userInput);
+const Details = ({ userInput, setUserInput, switchToElements }) => {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [notes, setNotes] = useState('');
+
+    const [btnDisable, setBtnDisable] = useState(false);
+
+    useEffect(() => {
+        if (name && email && phoneNumber && notes){
+            setBtnDisable(false)
+        }
+        else {
+            setBtnDisable(true);
+        }
+    }, [ name, email, phoneNumber, notes ])
+
+    const btnHandler = () => {
+        setUserInput({name, email, phoneNumber, notes});
+        switchToElements('payment');
+    }
     
     return (
         <div className={styles.container}>
@@ -17,25 +37,25 @@ const Details = ({ userInput, switchElement, switchToElements }) => {
                 <div className={styles.field}>
                     <span className={styles.label}>Name</span>
                     <div className={styles.inputContainer}>
-                        <input type="text" placeholder="Full name" className={styles.input} />
+                        <input type="text" placeholder="Full name" className={styles.input} onChange={(e) => setName(e.target.value)}/>
                     </div>
                 </div>
                 <div className={styles.field}>
                     <span className={styles.label}>Email</span>
                     <div className={styles.inputContainer}>
-                        <input type="email" placeholder="Email address" className={styles.input} />
+                        <input type="email" placeholder="Email address" className={styles.input} onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                 </div>
                 <div className={styles.field}>
                     <span className={styles.label}>Phone number</span>
                     <div className={styles.inputContainer}>
-                        <input type="number" placeholder="Phone number" className={styles.input} />
+                        <input type="number" placeholder="Phone number" className={styles.input} onChange={(e) => setPhoneNumber(e.target.value)}/>
                     </div>
                 </div>
                 <div className={styles.field}>
                     <span className={styles.label}>Notes</span>
                     <div className={styles.textContainer}>
-                        <textarea rows={10} placeholder="Anything you would like us to know before the session" className={styles.textArea} />
+                        <textarea rows={10} placeholder="Anything you would like us to know before the session" className={styles.textArea} onChange={(e) => setNotes(e.target.value)}/>
                     </div>
                 </div>
                 <div className={styles.btnGroup}>
@@ -43,7 +63,7 @@ const Details = ({ userInput, switchElement, switchToElements }) => {
                         <Button text={'Go back'} handler={() => switchToElements('time')}/>
                     </div>
                     <div className={styles.btn}>
-                        <Button text={'Next'} handler={() => switchToElements('payment')}/>
+                        <Button isDisable={btnDisable} text={'Next'} handler={ btnHandler }/>
                     </div>
                 </div>
             </div>
@@ -60,7 +80,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        switchToElements: (element) => dispatch({ type: actions.SWITCH_TO_ELEMENTS, payload: element })
+        switchToElements: (element) => dispatch({ type: actions.SWITCH_TO_ELEMENTS, payload: element }),
+        setUserInput: async (data) => await dispatch({ type: actions.setDetails, payload: data })
     }
 }
 

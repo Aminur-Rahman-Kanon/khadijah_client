@@ -35,11 +35,11 @@ const SelectTime = ({ userInput, setBeginTime, setEndTime, setDurationInput, swi
 
     const durationInputHandler = (value) => {
         setSelectedDuration(Number(value));
-        setDurationInput(durations[duration]);
+        setDurationInput(durations[value]);
         setEndTime(timeSlot[value + selectedTime])
     }
 
-    console.log(duration);
+    console.log(durations[duration]);
     
 
     const displayTime = timeSlot.map((time, i) => <button  key={time}

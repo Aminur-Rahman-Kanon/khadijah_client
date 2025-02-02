@@ -12,7 +12,7 @@ import Footer from './components/footer/footer';
 import { ToastContainer, Bounce } from 'react-toastify';
 
 
-function App({ mobileWidth }) {
+function App({ mobileWidth, userInput }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,6 +20,9 @@ function App({ mobileWidth }) {
     window.addEventListener('resize', () => stickyScrollHandler(topbar, mobileWidth));
     window.addEventListener('scroll', () => stickyScrollHandler(topbar, mobileWidth));
   }, []);
+
+  console.log(userInput);
+  
 
 
   return (
@@ -55,7 +58,8 @@ function App({ mobileWidth }) {
 
 const mapStateToProps = (state) => {
   return {
-    mobileWidth: state.mobileWidth
+    mobileWidth: state.mobileWidth,
+    userInput: state.userInput
   }
 }
 

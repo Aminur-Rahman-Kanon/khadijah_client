@@ -6,7 +6,7 @@ const INITIAL_STATE = {
     serviceElement: 'service',
     userInput: {
         service: '',
-        date: null,
+        date: '',
         duration: '',
         beginTime: '',
         endTime: '',
@@ -79,7 +79,7 @@ export const reducer = (state = INITIAL_STATE, action) => {
                 }
             }
 
-        case actions.inputDetails:
+        case actions.setDetails:
             return {
                 ...state,
                 userInput: {
