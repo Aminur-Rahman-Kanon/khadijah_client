@@ -81,13 +81,13 @@
 .priceContainer {
     width: 50%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     gap: 10px;
 }
 
 .dot {
-    width: 50%;
+    /* width: 50%; */
     font-size: 1.2rem;
     color: black;
     display: flex;
@@ -96,7 +96,7 @@
 }
 
 .price {
-    width: 50%;
+    /* width: 50%; */
     font-size: 1.2rem;
     color: #f9aab4;
 }
