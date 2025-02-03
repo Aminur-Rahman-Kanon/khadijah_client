@@ -30,7 +30,7 @@ const Details = ({ userInput, setUserInput, switchToElements }) => {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <span className={styles.textSmallBlack}>You selected a booking for <span className={styles.textHighlight}>{userInput.service}</span> at <span className={styles.textHighlight}>{userInput.beginTime}</span> for <span className={styles.textHighlight}>{userInput.duration}</span> on <span className={styles.textHighlight}>{userInput.date}</span>. The price for the service is <span className={styles.textHighlight}>£120.00</span>.</span>
+                <span className={styles.textSmallBlack}>You selected a booking for <span className={styles.textHighlight}>{userInput.service}</span> at <span className={styles.textHighlight}>{userInput.beginTime}</span> for <span className={styles.textHighlight}>{userInput.duration}</span> on <span className={styles.textHighlight}>{userInput.date}</span>. The price for the service is <span className={styles.textHighlight}>£ {userInput.price}</span>.</span>
                 <span className={styles.textSmallBlack}>Please provide your details in the form below to proceed with booking.</span>
             </div>
             <div className={styles.wrapper}>

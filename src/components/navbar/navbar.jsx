@@ -1,5 +1,10 @@
 import React from 'react';
 import styles from './navbar.module.css';
+import { massages } from '../../data/data';
+
+const nestedList = massages.map(m => <li key={m.id} className={styles.list}>
+    <a href='#' className={styles.nestedLink}>{m.type}</a>
+</li>)
 
 const Navbar = () => {
     return (
@@ -11,9 +16,12 @@ const Navbar = () => {
                     </a>
                 </li>
                 <li className={styles.item}>
-                    <a href='#' className={styles.link}>
-                        massages
-                    </a>
+                    <div className={styles.parentList}>
+                        <span className={styles.text}>massages</span>
+                    </div>
+                    <ul className={styles.nestedList}>
+                        {nestedList}
+                    </ul>
                 </li>
                 <li className={styles.item}>
                     <a href='#' className={styles.link}>

@@ -15,7 +15,7 @@ const BookAppointment = ({serviceElement}) => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [serviceElement])
-    
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.bgWrapper}>

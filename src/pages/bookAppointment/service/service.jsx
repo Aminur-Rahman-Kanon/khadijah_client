@@ -3,10 +3,12 @@ import styles from './service.module.css';
 import Button from "../../../components/button/button";
 import { connect } from "react-redux";
 import { actions } from "../../../redux/actions";
+import { massages } from '../../../data/data';
 
 const Service = ({ userInput, switchToElements, takeUserInput }) => {
     
-    console.log(userInput);
+    const massage = massages.map(m => <option key={m.id} value={m.type} className={styles.option}>{m.type}</option>)
+
     
     return (
         <div className={styles.wrapper}>
@@ -16,10 +18,7 @@ const Service = ({ userInput, switchToElements, takeUserInput }) => {
             <div className={styles.container}>
                 <select defaultValue={'Select service'} className={styles.select} onChange={(e) => takeUserInput(e.target.value)}>
                     <option disabled className={styles.option}>Select service</option>
-                    <option className={styles.option} value={'Sports massage'}>Sports massage</option>
-                    <option className={styles.option} value={'HS massage'}>HS massage</option>
-                    <option className={styles.option} value={'Massage therapy'}>Massage therapy</option>
-                    <option className={styles.option} value={'Physiotherapy'}>Physiotherapy</option>
+                    {massage}
                 </select>
             </div>
             <div className={styles.footer}>

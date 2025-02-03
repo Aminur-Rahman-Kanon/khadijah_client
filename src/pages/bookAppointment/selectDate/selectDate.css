@@ -85,6 +85,7 @@ abbr {
 .react-calendar__month-view__days__day {
     border: 0.1px solid rgb(233, 232, 232);
     background-color: white;
+    color: black;
     height: 35px;
     cursor: pointer;
     transition: all 0.4s ease;
@@ -103,6 +104,7 @@ abbr {
 
 .react-calendar__month-view__days__day:disabled {
     cursor: not-allowed;
+    color: #c3c3c3;
 }
 
 .react-calendar__month-view__days__day:disabled:hover {
