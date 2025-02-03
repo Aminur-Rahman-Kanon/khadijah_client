@@ -16,85 +16,169 @@ const Services = () => {
                 <div className={styles.container}>
                     <div className={styles.header}>
                         <div className={styles.headingContainer}>
-                            <h3 className={styles.headerMediumBlack}>deep tissue massage</h3>
-                        </div>
-                        <div className={styles.priceContainer}>
-                            <span className={styles.dot}>...............</span>
-                            <span className={styles.price}>£80.00</span>
+                            <h3 className={styles.headerMediumPink}>deep tissue massage</h3>
                         </div>
                     </div>
                     <div className={styles.footer}>
-                        10 - 100 minute session (£80.00 - £132.50 per session).
+                        <div className={styles.price}>
+                            <span className={styles.label1}>30 minutes</span>
+                            <span className={styles.label2}>£45</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>60 minutes</span>
+                            <span className={styles.label2}>£80</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>90 minutes</span>
+                            <span className={styles.label2}>£115</span>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.container}>
                     <div className={styles.header}>
                         <div className={styles.headingContainer}>
-                            <h3 className={styles.headerMediumBlack}>swedish massage</h3>
-                        </div>
-                        <div className={styles.priceContainer}>
-                            <span className={styles.dot}>...............</span>
-                            <span className={styles.price}>£65.00</span>
+                            <h3 className={styles.headerMediumPink}>swedish massage</h3>
                         </div>
                     </div>
                     <div className={styles.footer}>
-                        10 – 40 minute session with medium and long gliding strokes.
+                        <div className={styles.price}>
+                            <span className={styles.label1}>30 minutes</span>
+                            <span className={styles.label2}>£45</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>60 minutes</span>
+                            <span className={styles.label2}>£80</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>90 minutes</span>
+                            <span className={styles.label2}>£115</span>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.container}>
                     <div className={styles.header}>
                         <div className={styles.headingContainer}>
-                            <h3 className={styles.headerMediumBlack}>therapeutic massage</h3>
-                        </div>
-                        <div className={styles.priceContainer}>
-                            <span className={styles.dot}>...............</span>
-                            <span className={styles.price}>£50.00</span>
+                            <h3 className={styles.headerMediumPink}>sports massage</h3>
                         </div>
                     </div>
                     <div className={styles.footer}>
-                        If you feel tired and stressed after work.
+                        <div className={styles.price}>
+                            <span className={styles.label1}>30 minutes</span>
+                            <span className={styles.label2}>£45</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>60 minutes</span>
+                            <span className={styles.label2}>£80</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>90 minutes</span>
+                            <span className={styles.label2}>£115</span>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.container}>
                     <div className={styles.header}>
                         <div className={styles.headingContainer}>
-                            <h3 className={styles.headerMediumBlack}>luxury group massage</h3>
-                        </div>
-                        <div className={styles.priceContainer}>
-                            <span className={styles.dot}>...............</span>
-                            <span className={styles.price}>£100.00</span>
+                            <h3 className={styles.headerMediumPink}>Lymphatic draining massage</h3>
                         </div>
                     </div>
                     <div className={styles.footer}>
-                        30 minute session packages are great for bridal parties.
+                        <div className={styles.price}>
+                            <span className={styles.label1}>30 minutes</span>
+                            <span className={styles.label2}>£45</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>60 minutes</span>
+                            <span className={styles.label2}>£80</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>90 minutes</span>
+                            <span className={styles.label2}>£115</span>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.container}>
                     <div className={styles.header}>
                         <div className={styles.headingContainer}>
-                            <h3 className={styles.headerMediumBlack}>lomi lomi massage</h3>
-                        </div>
-                        <div className={styles.priceContainer}>
-                            <span className={styles.dot}>...............</span>
-                            <span className={styles.price}>£60.00</span>
+                            <h3 className={styles.headerMediumPink}>indian head massage</h3>
                         </div>
                     </div>
                     <div className={styles.footer}>
-                        It is a traditional Hawaiian relaxing massage.
+                        <div className={styles.price}>
+                            <span className={styles.label1}>30 minutes</span>
+                            <span className={styles.label2}>£45</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>60 minutes</span>
+                            <span className={styles.label2}>£80</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>90 minutes</span>
+                            <span className={styles.label2}>£115</span>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.container}>
                     <div className={styles.header}>
                         <div className={styles.headingContainer}>
-                            <h3 className={styles.headerMediumBlack}>prenatal massage</h3>
-                        </div>
-                        <div className={styles.priceContainer}>
-                            <span className={styles.dot}>...............</span>
-                            <span className={styles.price}>£45.00</span>
+                            <h3 className={styles.headerMediumPink}>Sculpting facial massage</h3>
                         </div>
                     </div>
                     <div className={styles.footer}>
-                        A relaxing side-lying massage designed to soothe sore muscles.
+                        <div className={styles.price}>
+                            <span className={styles.label1}>30 minutes</span>
+                            <span className={styles.label2}>£45</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>60 minutes</span>
+                            <span className={styles.label2}>£80</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>90 minutes</span>
+                            <span className={styles.label2}>£115</span>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.header}>
+                        <div className={styles.headingContainer}>
+                            <h3 className={styles.headerMediumPink}>Aromatherapy massage</h3>
+                        </div>
+                    </div>
+                    <div className={styles.footer}>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>30 minutes</span>
+                            <span className={styles.label2}>£45</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>60 minutes</span>
+                            <span className={styles.label2}>£80</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>90 minutes</span>
+                            <span className={styles.label2}>£115</span>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.header}>
+                        <div className={styles.headingContainer}>
+                            <h3 className={styles.headerMediumPink}>Hot stone massage</h3>
+                        </div>
+                    </div>
+                    <div className={styles.footer}>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>30 minutes</span>
+                            <span className={styles.label2}>£45</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>60 minutes</span>
+                            <span className={styles.label2}>£80</span>
+                        </div>
+                        <div className={styles.price}>
+                            <span className={styles.label1}>90 minutes</span>
+                            <span className={styles.label2}>£115</span>
+                        </div>
                     </div>
                 </div>
             </div>

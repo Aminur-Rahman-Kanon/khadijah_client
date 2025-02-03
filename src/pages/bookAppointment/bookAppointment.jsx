@@ -8,7 +8,7 @@ import SelectTime from "./selectime/selectTime";
 import Details from "./details/details";
 import { connect } from "react-redux";
 import Payment from "./payment/payment";
-import PaymentSuccess from "./paymentSuccess/paymentSuccess";
+import PaymentSuccess from "./done/done";
 
 const BookAppointment = ({serviceElement}) => {
 

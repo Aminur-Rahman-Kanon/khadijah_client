@@ -1,13 +1,20 @@
 import React from "react";
 import styles from './secondElement.module.css';
 import { Link } from "react-router-dom";
-import m1 from '../../../assets/secondElement/1_1.jpg';
-import m2 from '../../../assets/secondElement/2_1.jpg';
-import m3 from '../../../assets/secondElement/3.jpg';
-import m4 from '../../../assets/secondElement/4.jpg';
+import { massages } from '../../../data/data';
 import border from '../../../assets/others/horizontal_line.png';
 
 const SecondElement = () => {
+    const massage = massages.map(m => <div key={m.id} className={styles.item}>
+        <div className={styles.imgContainer}>
+            <img alt={m.type} src={m.img} className={styles.img}/>
+        </div>
+        <div className={styles.banner}>
+            <h3 className={styles.headingMediumPink}>{m.type}</h3>
+            <span className={styles.textExtraSmallBlack}>{m.text}</span>
+            <Link to={''} className={styles.btn}>book now</Link>
+        </div>
+    </div>)
     return (
         <div className={styles.main}>
             <div className={styles.wrapper}>
@@ -21,46 +28,7 @@ const SecondElement = () => {
                 </div>
                 <div className={styles.bottom}>
                     <div className={styles.itemContainer}>
-                        <div className={styles.item}>
-                            <div className={styles.imgContainer}>
-                                <img alt='massage1' src={m1} className={styles.img}/>
-                            </div>
-                            <div className={styles.banner}>
-                                <h3 className={styles.headingMediumPink}>sports massage</h3>
-                                <span className={styles.textExtraSmallBlack}>Innovative bodywork</span>
-                                <Link to={''} className={styles.btn}>book now</Link>
-                            </div>
-                        </div>
-                        <div className={styles.item}>
-                            <div className={styles.imgContainer}>
-                                <img alt='massage1' src={m2} className={styles.img}/>
-                            </div>
-                            <div className={styles.banner}>
-                                <h3 className={styles.headingMediumPink}>hs massage</h3>
-                                <span className={styles.textExtraSmallBlack}>Uses smooth, heated stones</span>
-                                <Link to={''} className={styles.btn}>book now</Link>
-                            </div>
-                        </div>
-                        <div className={styles.item}>
-                            <div className={styles.imgContainer}>
-                                <img alt='massage1' src={m3} className={styles.img}/>
-                            </div>
-                            <div className={styles.banner}>
-                                <h3 className={styles.headingMediumPink}>massage therapy</h3>
-                                <span className={styles.textExtraSmallBlack}>Innovative bodywork</span>
-                                <Link to={''} className={styles.btn}>book now</Link>
-                            </div>
-                        </div>
-                        <div className={styles.item}>
-                            <div className={styles.imgContainer}>
-                                <img alt='massage1' src={m4} className={styles.img}/>
-                            </div>
-                            <div className={styles.banner}>
-                                <h3 className={styles.headingMediumPink}>physiotherapy</h3>
-                                <span className={styles.textExtraSmallBlack}>Innovative bodywork</span>
-                                <Link to={''} className={styles.btn}>book now</Link>
-                            </div>
-                        </div>
+                        {massage}
                     </div>
                 </div>
             </div>

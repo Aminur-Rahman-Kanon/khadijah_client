@@ -5,8 +5,6 @@ import { Elements } from '@stripe/react-stripe-js';
 import PaymentGateway from '../../../components/paymentGateway/paymentGateway';
 
 const Payment = () => {
-    
-    // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
     const [clientSecret, setClientSecret] = useState(null);
     const [stripePromise, setStripePromise] = useState(null);
@@ -17,9 +15,12 @@ const Payment = () => {
     }, [])
     
     useEffect(() => {
-        console.log('payment');
         fetch('https://khadijah-server.onrender.com/payment-intent', {
             method: 'POST',
+            // headers: {
+            //     "Content-Type": 'application/json',
+            //     "Access-Control-Allow-Origin": "*"
+            // },
             body: JSON.stringify({})
         }).then(async (r) => {
             const { clientSecret } = await r.json();

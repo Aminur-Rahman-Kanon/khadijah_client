@@ -34,7 +34,7 @@
 }
 
 .imgContainer {
-    width: 100px;
+    width: 150px;
     /* height: 200px; */
 }
 
@@ -69,4 +69,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 767px) {
+    .imgContainer {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        max-width: unset;
+    }
 }

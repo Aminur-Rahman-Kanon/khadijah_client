@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { actions } from '../../redux/actions';
 
 
-const PaymentGateway = ({ userInput, serviceElement, toggleElement }) => {
+const PaymentGateway = ({ userInput, toggleElement }) => {
 
     const stripe = useStripe();
     const elements = useElements();
@@ -26,27 +26,32 @@ const PaymentGateway = ({ userInput, serviceElement, toggleElement }) => {
         await stripe.confirmPayment({
             elements,
             confirmParams: {
-                return_url: 'https://khadijah-client.onrender.com/book-appointment',
+                return_url: 'https://khadijah-client.onrender.com/book-appointment/payment-success',
             },
             redirect: 'if_required'
         }).then(async d => {
-            await fetch('https://khadijah-server.onrender.com/confirm-payment', {
-                method:'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ userInput })
-            }).then(res => res.json()).then(resp => {
-                if (resp.status === 'success'){
-                    setSpinner(false);
-                    return toggleElement('done');
-                }
-            })
-            .catch(e => {
+            if (d.error){
                 setSpinner(false);
-                return toast.error(e.message)
-            })
-            
+                return toast.error(`${d.error.code}\n${d.error.message}`)
+            }
+            else {
+                await fetch('https://khadijah-server.onrender.com/confirm-payment', {
+                    method:'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ userInput })
+                }).then(res => res.json()).then(resp => {
+                    if (resp.status === 'success'){
+                        setSpinner(false);
+                        return toggleElement('done');
+                    }
+                })
+                .catch(e => {
+                    setSpinner(false);
+                    return toast.error(e.message)
+                })
+            }
         }).catch(e => {
             setSpinner(false);
             return toast.error(e.message)

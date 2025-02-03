@@ -7,6 +7,7 @@ const INITIAL_STATE = {
     userInput: {
         service: '',
         date: '',
+        price: '',
         duration: '',
         beginTime: '',
         endTime: '',
@@ -75,7 +76,8 @@ export const reducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 userInput: {
                     ...state.userInput,
-                    duration: action.payload
+                    duration: action.payload.duration,
+                    price: action.payload.price
                 }
             }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './paymentSuccess.module.css';
+import styles from './done.module.css';
 import check from '../../../assets/others/checkmark.png';
 import { Link } from 'react-router-dom';
 

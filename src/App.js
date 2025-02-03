@@ -10,6 +10,7 @@ import Sidedrawer from './components/sidedrawer/sidedrawer';
 import BookAppointment from './pages/bookAppointment/bookAppointment';
 import Footer from './components/footer/footer';
 import { ToastContainer, Bounce } from 'react-toastify';
+import PaymentRedirect from './pages/bookAppointment/paymentRedirect/paymentRedirect';
 
 
 function App({ mobileWidth, userInput }) {
@@ -50,6 +51,7 @@ function App({ mobileWidth, userInput }) {
         <Routes>
             <Route path='/' element={<Homepage />}/>
             <Route path='/book-appointment' element={<BookAppointment />} />
+            <Route path='/book-appointment/payment-success' element={<PaymentRedirect />} />
         </Routes>
         <Footer />
       </div>

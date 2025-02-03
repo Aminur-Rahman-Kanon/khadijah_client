@@ -11,6 +11,12 @@ const durations = {
     '6': '90 minutes',
 }
 
+const prices = {
+    '30 minutes': '£45',
+    '60 minutes': '£80',
+    '90 minutes': '£115',
+}
+
 const SelectTime = ({ userInput, setBeginTime, setEndTime, setDurationInput, switchToElements }) => {
 
     const [selectedDuration, setSelectedDuration] = useState();
@@ -35,7 +41,9 @@ const SelectTime = ({ userInput, setBeginTime, setEndTime, setDurationInput, swi
 
     const durationInputHandler = (value) => {
         setSelectedDuration(Number(value));
-        setDurationInput(durations[value]);
+        const duration = durations[value]
+        const price = prices[duration]
+        setDurationInput({duration, price});
         setEndTime(timeSlot[value + selectedTime])
     }
 
@@ -91,7 +99,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         setBeginTime: (value) => dispatch({ type: actions.selectBeginTime, payload: value }),
         setEndTime: (value) => dispatch({ type: actions.selectEndTime, payload: value }),
-        setDurationInput: (value) => dispatch({ type: actions.selectDuration, payload: value }),
+        setDurationInput: (value) => dispatch({ type: actions.selectDuration, payload: { duration: value.duration, price: value.price } }),
         switchToElements: (element) => dispatch({ type: actions.SWITCH_TO_ELEMENTS, payload: element })
     }
 }
