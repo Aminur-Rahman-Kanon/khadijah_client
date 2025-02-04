@@ -106,7 +106,7 @@
         flex-direction: column;
     }
 
-    .link {
+    .link, .text {
         font-size: 1.2rem;
     }
 
