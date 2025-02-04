@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './navbar.module.css';
 import { massages } from '../../data/data';
+import { Link } from 'react-router-dom';
 
 const nestedList = massages.map(m => <li key={m.id} className={styles.list}>
-    <a href='#' className={styles.nestedLink}>{m.type}</a>
+    <Link to={`/massages/${m.type}`} className={styles.nestedLink}>{m.type}</Link>
 </li>)
 
 const Navbar = () => {

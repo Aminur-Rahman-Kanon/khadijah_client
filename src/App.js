@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import './App.css';
 import Topbar from './components/topbar/topbar';
 import { Routes, Route } from 'react-router-dom';
@@ -11,6 +11,8 @@ import BookAppointment from './pages/bookAppointment/bookAppointment';
 import Footer from './components/footer/footer';
 import { ToastContainer, Bounce } from 'react-toastify';
 import PaymentRedirect from './pages/bookAppointment/paymentRedirect/paymentRedirect';
+const Massages = lazy(() => import('./pages/massages/massages'));
+
 
 
 function App({ mobileWidth, userInput }) {
@@ -52,6 +54,7 @@ function App({ mobileWidth, userInput }) {
             <Route path='/' element={<Homepage />}/>
             <Route path='/book-appointment' element={<BookAppointment />} />
             <Route path='/book-appointment/payment-success' element={<PaymentRedirect />} />
+            <Route path='/massages/:massageId' element={<Suspense fallback={'loading...'}><Massages /></Suspense>}/>
         </Routes>
         <Footer />
       </div>

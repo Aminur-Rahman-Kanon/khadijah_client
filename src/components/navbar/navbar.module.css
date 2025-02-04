@@ -24,26 +24,20 @@
 
 .nestedList {
     position: absolute;
-    top: 5%;
-    left: -50%;
-    transform: translateX(-50%);
-    transform: translateY(-50%);
+    top: 4.5%;
+    left: 50%;
+    transform: translate(-50%, 4.5%);
     width: 100%;
     min-width: 280px;
-    padding: 20px;
-    /* border: 1px solid black; */
+    padding: 35px 20px;
     box-sizing: border-box;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: white;
     gap: 20px;
     list-style: none;
-    transition: all 0.5s ease;
-    /* z-index: -1; */
-    opacity: 0;
-    overflow: hidden;
 }
 
 
@@ -61,11 +55,10 @@
 }
 
 .item:hover .nestedList {
-    opacity: 1;
-    transform: translateY(0);
+    display: flex;
 }
 
-.link, .nestedLink {
+.link {
     text-decoration: none;
     text-transform: uppercase;
     font-family: inherit;
@@ -73,11 +66,40 @@
     font-weight: 600;
     color: inherit;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.item:hover {
+.text {
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: inherit;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+}
+
+.nestedLink {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgb(77, 77, 77);
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.7s ease
+}
+
+.nestedLink:hover {
     color: black;
 }
+
+/* .item:hover {
+    color: black;
+} */
 
 @media (max-width: 767px) {
     .container {
