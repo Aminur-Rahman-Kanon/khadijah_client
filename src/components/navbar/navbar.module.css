@@ -27,25 +27,9 @@
     top: 4.5%;
     left: 50%;
     transform: translate(-50%, 4.5%);
-    width: 100%;
+    /* width: 100%; */
     min-width: 280px;
-    padding: 35px 20px;
-    box-sizing: border-box;
     display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    gap: 20px;
-    list-style: none;
-}
-
-
-.list {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .item {
@@ -84,23 +68,6 @@
     border: none;
 }
 
-.nestedLink {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: rgb(77, 77, 77);
-    text-align: center;
-    text-decoration: none;
-    transition: color 0.7s ease
-}
-
-.nestedLink:hover {
-    color: black;
-}
-
-/* .item:hover {
-    color: black;
-} */
-
 @media (max-width: 767px) {
     .container {
         flex-direction: column;
@@ -116,5 +83,9 @@
 
     .item:hover {
         color: white;
+    }
+
+    .item:hover .nestedList {
+        display: none;
     }
 }

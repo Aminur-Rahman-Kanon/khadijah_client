@@ -7,4 +7,6 @@ export const actions = {
     selectBeginTime: 'SELECT_BEGIN_TIME',
     selectEndTime: 'SELECT_END_TIME',
     setDetails: 'SET_DETAILS',
+    clearAlldata: 'CLEAR_ALL_DATA',
+    toggleNestedList: 'TOGGLE_NESTED_LIST'
 }

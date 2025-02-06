@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from './details.module.css';
 import Button from "../../../components/button/button";
 import { connect } from "react-redux";
 import { actions } from "../../../redux/actions";
 
 const Details = ({ userInput, setUserInput, switchToElements }) => {
+
+    const navigate = useNavigate();
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -14,7 +17,11 @@ const Details = ({ userInput, setUserInput, switchToElements }) => {
     const [btnDisable, setBtnDisable] = useState(false);
 
     useEffect(() => {
-        if (name && email && phoneNumber && notes){
+        if (!userInput.service) window.location.href = '/bookings/';
+    }, [])
+
+    useEffect(() => {
+        if (name && email && phoneNumber){
             setBtnDisable(false)
         }
         else {
@@ -22,9 +29,15 @@ const Details = ({ userInput, setUserInput, switchToElements }) => {
         }
     }, [ name, email, phoneNumber, notes ])
 
-    const btnHandler = () => {
-        setUserInput({name, email, phoneNumber, notes});
+    const nextBtnHandler = async () => {
+        await setUserInput({name, email, phoneNumber, notes});
         switchToElements('payment');
+        navigate('/bookings/service/time/details/payment')
+    }
+
+    const prevBtnHandler = () => {
+        switchToElements('time');
+        navigate(-1);
     }
     
     return (
@@ -37,7 +50,11 @@ const Details = ({ userInput, setUserInput, switchToElements }) => {
                 <div className={styles.field}>
                     <span className={styles.label}>Name</span>
                     <div className={styles.inputContainer}>
-                        <input type="text" placeholder="Full name" className={styles.input} onChange={(e) => setName(e.target.value)}/>
+                        <input type="text"
+                                placeholder="Full name"
+                                className={styles.input}
+                                value={userInput.details.name || name}
+                                onChange={(e) => setName(e.target.value)}/>
                     </div>
                 </div>
                 <div className={styles.field}>
@@ -60,10 +77,10 @@ const Details = ({ userInput, setUserInput, switchToElements }) => {
                 </div>
                 <div className={styles.btnGroup}>
                     <div className={styles.btn}>
-                        <Button text={'Go back'} handler={() => switchToElements('time')}/>
+                        <Button text={'Go back'} handler={prevBtnHandler}/>
                     </div>
                     <div className={styles.btn}>
-                        <Button isDisable={btnDisable} text={'Next'} handler={ btnHandler }/>
+                        <Button isDisable={btnDisable} text={'Next'} handler={ nextBtnHandler }/>
                     </div>
                 </div>
             </div>

@@ -16,6 +16,8 @@ const Progress = ({ serviceElement }) => {
         window.addEventListener('resize', () => setInnerWidth(window.innerWidth))
     }, [])
 
+    console.log(serviceElement)
+
     
     useEffect(() => {
         const parent = document.querySelector(`.${styles.container}`);

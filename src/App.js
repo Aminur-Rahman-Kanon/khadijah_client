@@ -7,13 +7,18 @@ import AdditionalTopbar from './components/additionalTopbar/additionalTopbar';
 import { stickyScrollHandler } from './utilities/utilities';
 import { connect } from 'react-redux';
 import Sidedrawer from './components/sidedrawer/sidedrawer';
-import BookAppointment from './pages/bookAppointment/bookAppointment';
+// import BookAppointment from './pages/bookAppointment/bookAppointment';
 import Footer from './components/footer/footer';
 import { ToastContainer, Bounce } from 'react-toastify';
 import PaymentRedirect from './pages/bookAppointment/paymentRedirect/paymentRedirect';
+import SelectDate from './pages/bookAppointment/selectDate/selectDate';
+import Details from './pages/bookAppointment/details/details';
+import Payment from './pages/bookAppointment/payment/payment';
+import Done from './pages/bookAppointment/done/done';
+const Massage = lazy(() => import('./pages/massage/massage'));
 const Massages = lazy(() => import('./pages/massages/massages'));
-
-
+const BookAppointment = lazy(() => import('./pages/bookAppointment/bookAppointment'));
+const Service = lazy(() => import('./pages/bookAppointment/service/service'));
 
 function App({ mobileWidth, userInput }) {
 
@@ -26,7 +31,6 @@ function App({ mobileWidth, userInput }) {
 
   console.log(userInput);
   
-
 
   return (
       <div className="app">
@@ -52,9 +56,17 @@ function App({ mobileWidth, userInput }) {
         </div>
         <Routes>
             <Route path='/' element={<Homepage />}/>
-            <Route path='/book-appointment' element={<BookAppointment />} />
-            <Route path='/book-appointment/payment-success' element={<PaymentRedirect />} />
-            <Route path='/massages/:massageId' element={<Suspense fallback={'loading...'}><Massages /></Suspense>}/>
+            <Route path='/bookings' element={<BookAppointment />}>
+              <Route path='/bookings/' element={<Service />}/>
+              <Route path=':service' element={<Service />}/>
+              <Route path=':service/:time' element={<SelectDate />}/>
+              <Route path=':service/:time/:details' element={<Details />}/>
+              <Route path=':service/:time/:details/:payment' element={<Payment />}/>
+              <Route path=':service/:time/:details/:payment/:status' element={<Done />}/>
+            </Route>
+            <Route path='/stripe/payment-redirect' element={<PaymentRedirect />} />
+            <Route path='/massage/:massageId' element={<Suspense fallback={'loading...'}><Massage /></Suspense>}/>
+            <Route path='/massages' element={<Suspense fallback={'loading...'}><Massages /></Suspense>}/>
         </Routes>
         <Footer />
       </div>

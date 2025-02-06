@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './done.module.css';
 import check from '../../../assets/others/checkmark.png';
 import { Link } from 'react-router-dom';
 
 const PaymentSuccess = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>

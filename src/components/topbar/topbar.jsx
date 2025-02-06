@@ -16,7 +16,7 @@ const Topbar = () => {
                 <Navbar />
             </div>
             <div className={styles.orderLink}>
-                <BookNow />
+                <BookNow path={'/bookings/'}/>
             </div>
             <div className={styles.drawToggle}>
                 <Drawtoggle />

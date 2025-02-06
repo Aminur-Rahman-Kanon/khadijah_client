@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from './selectTime.module.css';
 import { timeSlot } from "../../../data/data";
 import Button from "../../../components/button/button";
@@ -18,6 +19,8 @@ const prices = {
 }
 
 const SelectTime = ({ userInput, setBeginTime, setEndTime, setDurationInput, switchToElements }) => {
+
+    const navigate = useNavigate();
 
     const [selectedDuration, setSelectedDuration] = useState();
     const [duration, setDuration] = useState('');
@@ -47,9 +50,6 @@ const SelectTime = ({ userInput, setBeginTime, setEndTime, setDurationInput, swi
         setEndTime(timeSlot[value + selectedTime])
     }
 
-    console.log(durations[duration]);
-    
-
     const displayTime = timeSlot.map((time, i) => <button  key={time}
                                                         disabled={!selectedDuration}
                                                         className={i >= selectedTime && i <= lastIndex ? `${styles.timeContainer} ${styles.active}` : styles.timeContainer}
@@ -57,6 +57,15 @@ const SelectTime = ({ userInput, setBeginTime, setEndTime, setDurationInput, swi
         {time} pm
     </button>)
     
+    const prevBtnHandler = () => {
+        switchToElements('service');
+        navigate(-1);
+    }
+
+    const nextBtnHandler = () => {
+        switchToElements('details');
+        navigate('/bookings/service/time/details');
+    }
 
     return (
         <div className={styles.wrapper}>
@@ -79,10 +88,10 @@ const SelectTime = ({ userInput, setBeginTime, setEndTime, setDurationInput, swi
             </div>
             <div className={styles.btnGroup}>
                 <div className={styles.btn}>
-                    <Button text={'Go back'} handler={() => switchToElements('service')}/>
+                    <Button text={'Go back'} handler={prevBtnHandler}/>
                 </div>
                 <div className={styles.btn}>
-                    <Button isDisable={!btnDisable} text={'Next'} handler={() => switchToElements('details')}/>
+                    <Button isDisable={!btnDisable} text={'Next'} handler={nextBtnHandler}/>
                 </div>
             </div>
         </div>

@@ -132,6 +132,10 @@ abbr {
     max-width: 200px;
 }
 
+.time {
+    width: 90%;
+}
+
 @media (max-width: 767px) {
     .calender-container {
         width: 100%;
@@ -139,5 +143,9 @@ abbr {
 
     .btn {
         max-width: unset
-    };
+    }
+
+    .time {
+        width: 100%;
+    }
 }

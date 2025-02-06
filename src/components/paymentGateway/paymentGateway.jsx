@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import './paymentGateway.css';
 import { PaymentElement } from '@stripe/react-stripe-js';
 import { useElements, useStripe } from '@stripe/react-stripe-js'
@@ -9,10 +10,11 @@ import { connect } from 'react-redux';
 import { actions } from '../../redux/actions';
 
 
-const PaymentGateway = ({ userInput, toggleElement }) => {
+const PaymentGateway = ({ userInput, toggleElement, clearData }) => {
 
     const stripe = useStripe();
     const elements = useElements();
+    const navigate = useNavigate();
 
     const [spinner, setSpinner] = useState(false);
 
@@ -26,7 +28,7 @@ const PaymentGateway = ({ userInput, toggleElement }) => {
         await stripe.confirmPayment({
             elements,
             confirmParams: {
-                return_url: 'https://khadijah-client.onrender.com/book-appointment/payment-success',
+                return_url: 'https://khadijah-client.onrender.com/stripe/payment-redirect',
             },
             redirect: 'if_required'
         }).then(async d => {
@@ -44,7 +46,9 @@ const PaymentGateway = ({ userInput, toggleElement }) => {
                 }).then(res => res.json()).then(resp => {
                     if (resp.status === 'success'){
                         setSpinner(false);
-                        return toggleElement('done');
+                        toggleElement('done');
+                        clearData();
+                        return navigate('/bookings/service/time/details/payment/success');
                     }
                 })
                 .catch(e => {
@@ -69,7 +73,8 @@ const PaymentGateway = ({ userInput, toggleElement }) => {
                     <div className='btn'>
                         <Button text={'Go back'} handler={(e) => {
                             e.preventDefault();
-                            toggleElement('details')
+                            toggleElement('details');
+                            navigate(-1);
                         }}/>
                     </div>
                     <div className='btn'>
@@ -91,7 +96,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        toggleElement: (element) => dispatch({ type: actions.SWITCH_TO_ELEMENTS, payload: element })
+        toggleElement: (element) => dispatch({ type: actions.SWITCH_TO_ELEMENTS, payload: element }),
+        clearData: () => dispatch({ type: actions.clearAlldata })
     }
 }
 

@@ -7,14 +7,17 @@ import SelectDate from "./selectDate/selectDate";
 import SelectTime from "./selectime/selectTime";
 import Details from "./details/details";
 import { connect } from "react-redux";
+import { Outlet } from "react-router-dom";
+import { actions } from "../../redux/actions";
 import Payment from "./payment/payment";
 import PaymentSuccess from "./done/done";
+import { useParams } from "react-router-dom";
 
-const BookAppointment = ({serviceElement}) => {
+const BookAppointment = ({serviceElement, setService}) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [serviceElement])
+    }, [])
 
     return (
         <div className={styles.wrapper}>
@@ -30,7 +33,8 @@ const BookAppointment = ({serviceElement}) => {
                 <Progress />
             </div>
             <div className={styles.displayService}>
-                <div style={serviceElement === 'service' ? {display:'flex'} : {display: 'none'}} className={styles.service}>
+                {<Outlet /> || <Service />}
+                {/* <div style={serviceElement === 'service' ? {display:'flex'} : {display: 'none'}} className={styles.service}>
                     <Service />
                 </div>
                 <div style={serviceElement === 'time' ? {display:'flex'} : {display: 'none'}} className={styles.service}>
@@ -45,7 +49,7 @@ const BookAppointment = ({serviceElement}) => {
                 </div>
                 <div style={serviceElement === 'done' ? {display:'flex'} : {display: 'none'}} className={styles.service}>
                     <PaymentSuccess />
-                </div>
+                </div> */}
             </div>
         </div>
     )
@@ -57,4 +61,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps) (BookAppointment);
+const mapDispatchToProps = dispatch => {
+    return {
+        setService: (value) => dispatch({ type: actions.selectService, payload: value })
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (BookAppointment);

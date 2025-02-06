@@ -10,7 +10,7 @@
 
 .wrapper {
     width: 100%;
-    padding: 30px 0;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,6 +41,7 @@
     color: black;
     margin: 10px auto;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .borderContainer {
@@ -75,7 +76,7 @@
     line-height: 25px;
 }
 
-.bottom {
+.body {
     width: 100%;
     padding: 20px 30px;
     box-sizing: border-box;
@@ -89,8 +90,8 @@
     padding: 10px;
     box-sizing: border-box;
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
     justify-content: center;
     align-items: center;
 }
@@ -99,11 +100,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    /* max-width: 350px;
-    max-height: 350px; */
-    /* width: 100%;
-    height: 100%; */
-    /* max-height: 400px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,27 +140,38 @@
     color: #fa99b4;
     margin: 10px auto;
     text-align: center;
-    /* font-style: italic; */
+    text-transform: capitalize;
 }
 
-.btn {
+.linkContiner {
     width: 100%;
-    height: 45px;
-    border: 1px solid #fa99b4;
-    background-color: #fa99b4;
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-top: 10px;
-    text-decoration: none;
+    margin: 25px auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.link {
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 1px solid #fa99b4;
+    background-color: #fa99b4;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
 @media (max-width: 1300px) {
     .itemContainer {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -175,11 +182,16 @@
 }
 
 @media (max-width: 767px) {
+    .wrapper {
+        padding: 30px 10px;
+    }
+    
     .itemContainer {
         grid-template-columns: 1fr;
+        gap: 10px;
     }
 
-    .bottom {
+    .body {
         padding: 10px;
     }
 

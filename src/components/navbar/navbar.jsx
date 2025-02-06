@@ -1,13 +1,11 @@
 import React from 'react';
 import styles from './navbar.module.css';
-import { massages } from '../../data/data';
-import { Link } from 'react-router-dom';
+import NestedList from './nestedList/nestedList';
+import { connect } from 'react-redux';
+import { actions } from '../../redux/actions';
 
-const nestedList = massages.map(m => <li key={m.id} className={styles.list}>
-    <Link to={`/massages/${m.type}`} className={styles.nestedLink}>{m.type}</Link>
-</li>)
 
-const Navbar = () => {
+const Navbar = ({ toggleNestedList }) => {
     return (
         <div className={styles.main}>
             <ul className={styles.container}>
@@ -17,12 +15,12 @@ const Navbar = () => {
                     </a>
                 </li>
                 <li className={styles.item}>
-                    <div className={styles.parentList}>
+                    <div className={styles.parentList} onClick={toggleNestedList}>
                         <span className={styles.text}>massages</span>
                     </div>
-                    <ul className={styles.nestedList}>
-                        {nestedList}
-                    </ul>
+                    <div className={styles.nestedList}>
+                        <NestedList />
+                    </div>
                 </li>
                 <li className={styles.item}>
                     <a href='#' className={styles.link}>
@@ -39,4 +37,10 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+const mapDispatchToProps = dispatch => {
+    return {
+        toggleNestedList: () => dispatch({ type: actions.toggleNestedList }),
+    }
+}
+
+export default connect(null, mapDispatchToProps) (Navbar);

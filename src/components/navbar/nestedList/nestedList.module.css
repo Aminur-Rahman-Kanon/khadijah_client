@@ -1,0 +1,42 @@
+.nestedList {
+    width: 100%;
+    padding: 35px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    gap: 20px;
+    list-style: none;
+}
+
+.list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nestedLink {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgb(77, 77, 77);
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.7s ease
+}
+
+.nestedLink:hover {
+    color: black;
+}
+
+@media (max-width: 767px) {
+    .nestedList {
+        background-color: inherit;
+    }
+
+    .nestedLink {
+        color: lightgray;
+    }
+}

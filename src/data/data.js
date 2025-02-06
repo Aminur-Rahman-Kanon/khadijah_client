@@ -34,9 +34,9 @@ export const massages = [
     },
     {
         id: 4,
-        type: 'Lymphatic draining massage',
-        text: 'Lymphatic draining massage',
-        img: m4
+        type: 'Hot stone massage',
+        text: 'Hot stone massage',
+        img: m8
     },
     {
         id: 5,
@@ -58,8 +58,9 @@ export const massages = [
     },
     {
         id: 8,
-        type: 'Hot stone massage',
-        text: 'Hot stone massage',
-        img: m8
+        type: 'Lymphatic draining massage',
+        text: 'Lymphatic draining massage',
+        img: m4
     },
+
 ]

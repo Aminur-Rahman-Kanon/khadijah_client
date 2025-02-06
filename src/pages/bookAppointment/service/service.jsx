@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from './service.module.css';
 import Button from "../../../components/button/button";
 import { connect } from "react-redux";
 import { actions } from "../../../redux/actions";
 import { massages } from '../../../data/data';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const Service = ({ userInput, switchToElements, takeUserInput }) => {
-    
+
+    const navigate = useNavigate();
+        
     const massage = massages.map(m => <option key={m.id} value={m.type} className={styles.option}>{m.type}</option>)
+
+    const btnHander = () => {
+        switchToElements('time');
+        navigate('/bookings/service/time')
+    }
 
     
     return (
@@ -16,14 +24,16 @@ const Service = ({ userInput, switchToElements, takeUserInput }) => {
                 <h3 className={styles.headingSmallBlack}>Please select a service</h3>
             </div>
             <div className={styles.container}>
-                <select defaultValue={'Select service'} className={styles.select} onChange={(e) => takeUserInput(e.target.value)}>
+                <select value={ userInput.service || 'Select service'}
+                        className={styles.select}
+                        onChange={(e) => takeUserInput(e.target.value)}>
                     <option disabled className={styles.option}>Select service</option>
                     {massage}
                 </select>
             </div>
             <div className={styles.footer}>
                 <div className={styles.btnContainer}>
-                    <Button isDisable={!userInput.service} text={'Next'} handler={() => switchToElements('time')}/>
+                    <Button isDisable={!userInput.service} text={'Next'} handler={btnHander}/>
                 </div>
             </div>
         </div>

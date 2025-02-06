@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './selectDate.css';
 import { Calendar } from 'react-calendar';
 import { connect } from 'react-redux';
 import { actions } from '../../../redux/actions';
+import selectTime from '../selectime/selectTime';
+import SelectTime from '../selectime/selectTime';
 
 function SelectDate ({ userInput, setUserInput }) {
+
+    useEffect(() => {
+        if (!userInput.service) window.location.href = '/bookings/';
+    }, [])
 
     return (
         <div className="calender-main-container">
@@ -35,6 +41,9 @@ function SelectDate ({ userInput, setUserInput }) {
                             onClickDay={(value) => {
                                 setUserInput(value.toDateString());
                             }}/>
+            </div>
+            <div className='time'>
+                <SelectTime />
             </div>
         </div>
     )

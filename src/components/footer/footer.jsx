@@ -13,7 +13,7 @@ const Footer = () => {
             </div>
             <h2 className={styles.headerLargeWhite}>Welcome to one of the best therapeutic massage studios in your area!</h2>
             <div className={styles.bookNowBtn}>
-                <BookNow />
+                <BookNow path={'/book-appointment'}/>
             </div>
         </div>
         <div className={styles.rightItem}>

@@ -3,6 +3,7 @@ import { actions } from "./actions";
 const INITIAL_STATE = {
     mobileWidth: 767,
     sidedrawer: false,
+    nestedList: false,
     serviceElement: 'service',
     userInput: {
         service: '',
@@ -26,7 +27,8 @@ export const reducer = (state = INITIAL_STATE, action) => {
         case actions.TOGGLE_SIDEDRAWER:
             return {
                 ...state,
-                sidedrawer: !state.sidedrawer
+                sidedrawer: !state.sidedrawer,
+                nestedList: false
             }
         
         case actions.SWITCH_TO_ELEMENTS:
@@ -36,6 +38,8 @@ export const reducer = (state = INITIAL_STATE, action) => {
             }
 
         case actions.selectService:
+            console.log(action);
+            
             return {
                 ...state,
                 userInput: {
@@ -91,6 +95,21 @@ export const reducer = (state = INITIAL_STATE, action) => {
                     }
                 }
             }
+
+        case actions.clearAlldata:
+            return {
+                ...state,
+                userInput: {
+                    details: {
+                        name: '',
+                        email: '',
+                        phoneNumber: '',
+                        notes: ''
+                    }
+                }
+            }
+        case actions.toggleNestedList:
+            return window.innerWidth <= state.mobileWidth ? ({ ...state, nestedList: !state.nestedList }) : ({ ...state, nestedList: false })
         default:
             return state;
     }

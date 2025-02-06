@@ -14,7 +14,7 @@ const Banner = () => {
                 <h2 className={styles.headingLargeWhite}>Khadijah Massage Centre</h2>
                 <h3 className={styles.headingSmallWhite}>A place of well-being where you reset, recharge and restore. </h3>
                 <div className={styles.btn}>
-                    <BookNow />
+                    <BookNow path={'/bookings/'}/>
                 </div>
             </div>
         </div>
