@@ -15,7 +15,7 @@ const Massages = () => {
             <h2 className={styles.headingMediumBlack}>{m.type}</h2>
             <span className={styles.textSmallBlack}>{m.text}</span>
             <div className={styles.linkContainer}>
-                <Link to={`/massage/${m.type}`} className={styles.link}>{`Book ${m.type} now`}</Link>
+                <Link to={`/massage/${m.type}`} className={styles.link}>Explore more</Link>
             </div>
         </div>
     </div>)

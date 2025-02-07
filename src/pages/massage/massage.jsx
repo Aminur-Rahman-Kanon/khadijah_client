@@ -1,13 +1,26 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import styles from './massage.module.css';
 import bg2 from '../../assets/massages/2.jpg';
 import Map from './map/map';
 import Button from '../../components/button/button';
+import HealthBenefit from '../massage/healthBenefit/healthBenefit';
+import { connect } from 'react-redux';
+import { actions } from '../../redux/actions';
 
-const Massage = () => {
+const Massage = ({ selectService }) => {
 
     const { massageId } = useParams();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
+    const btnHandler = async (value) => {
+        await selectService(value);
+        return navigate('/bookings/service', { replace: true });
+    }
 
     return (
         <div className={styles.wrapper}>
@@ -55,16 +68,23 @@ const Massage = () => {
                             </li>
                         </ul>
                         <div className={styles.btnContainer}>
-                            <Button text={`Book ${massageId} massage`}/>
+                            <Button text={`Book ${massageId} massage`} handler={() => btnHandler(massageId)}/>
                         </div>
                     </div>
                 </div>
             </div>
             <div className={styles.footer}>
+                <HealthBenefit />
                 <Map />
             </div>
         </div>
     )
 }
 
-export default Massage;
+const mapDispatchToprops = dispatch => {
+    return {
+        selectService: (value) => dispatch({ type: actions.selectService, payload: value })
+    }
+}
+
+export default connect(null, mapDispatchToprops) (Massage);

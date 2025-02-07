@@ -38,8 +38,6 @@ export const reducer = (state = INITIAL_STATE, action) => {
             }
 
         case actions.selectService:
-            console.log(action);
-            
             return {
                 ...state,
                 userInput: {
