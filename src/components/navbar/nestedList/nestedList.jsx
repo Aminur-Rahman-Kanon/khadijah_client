@@ -4,7 +4,7 @@ import { massages } from '../../../data/data';
 import { Link } from 'react-router-dom';
 
 const nestedList = massages.map(m => <li key={m.id} className={styles.list}>
-    <Link to={`/massage/${m.type}`} className={styles.nestedLink}>{m.type}</Link>
+    <a href={`/massage/${m.type}`} className={styles.nestedLink}>{m.type}</a>
 </li>)
 
 const NestedList = () => {

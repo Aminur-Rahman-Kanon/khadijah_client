@@ -207,6 +207,14 @@ li::marker {
 }
 
 @media (max-width: 767px) {
+    .main {
+        padding: 10px;
+    }
+    
+    .bgContainer {
+        width: 100%;
+    }
+
     .floatLeft, .floatRight {
         padding: 20px;
     }

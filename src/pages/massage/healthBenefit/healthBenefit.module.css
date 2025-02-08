@@ -141,6 +141,10 @@
 }
 
 @media (max-width: 767px) {
+    .wrapper {
+        margin: 25px auto;
+    }
+
     .smallerWidth {
         width: 100%;
         /* padding: 20px;
@@ -215,9 +219,6 @@
 }
 
 @media (max-width: 480px) {
-    .wrapper {
-        margin: 20px auto;
-    }
     .itemsContainer {
         flex-direction: column;
         justify-content: center;

@@ -2,11 +2,14 @@ import React from 'react';
 import styles from './banner.module.css';
 import BookNow from '../../bookNow/bookNow';
 import face from '../../../assets/logo/face.png'
+import banner from '../../../assets/video/video.mp4'
 
 const Banner = () => {
     return (
         <div className={styles.main}>
-            <div className={styles.bg}></div>
+            <div className={styles.bg}>
+                <video src={banner} loop playsInline autoPlay muted className={styles.video} />
+            </div>
             <div className={styles.banner}>
                 <div className={styles.imgContainer}>
                     <img src={face} alt='massage' className={styles.img}/>

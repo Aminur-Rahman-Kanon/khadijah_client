@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './homepage.module.css';
 import Banner from '../../components/homepage/banner/banner';
 import SecondElement from '../../components/homepage/secondElement/secondElement';
@@ -7,6 +7,11 @@ import Services from '../../components/homepage/services/services';
 import Map from '../massage/map/map';
 
 const Homepage = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+  
   return (
         <div className={styles.main}>
             <Banner />

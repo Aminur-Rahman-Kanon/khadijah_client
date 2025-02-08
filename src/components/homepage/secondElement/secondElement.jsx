@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from './secondElement.module.css';
 import { useNavigate, Link } from "react-router-dom";
 import { massages } from '../../../data/data';
@@ -6,17 +6,25 @@ import border from '../../../assets/others/horizontal_line.png';
 import { connect } from "react-redux";
 import { actions } from "../../../redux/actions";
 import Button from "../../button/button";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const SecondElement = ({ selectService }) => {
 
     const navigate = useNavigate();
 
-    const massage = massages.slice(0, 4).map(m => <div key={m.id} className={styles.item}>
+    useEffect(() => {
+        Aos.init({ duration: '1000', once: true, disable: () => window.innerWidth < 767 })
+    }, [])
+
+    const massage = massages.slice(0, 4).map(m => <div data-aos='fade-down-right' data-aos-easing='ease-out-cubic' data-aos-delay={250*m.id} key={m.id} className={styles.item}>
         <div className={styles.imgContainer}>
-            <img alt={m.type} src={m.img} className={styles.img}/>
+            <div className={styles.imgRadius}>
+                <img alt={m.type} src={m.img} className={styles.img}/>
+            </div>
         </div>
         <div className={styles.banner}>
-            <h3 className={styles.headingMediumPink}>{m.type}</h3>
+            <h3 className={styles.headingMediumBlack}>{m.type}</h3>
             <span className={styles.textExtraSmallBlack}>{m.text}</span>
             <Button text={'Book now'} handler={() => navigateHandler(m.type)}/>
         </div>

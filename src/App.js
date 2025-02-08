@@ -7,7 +7,6 @@ import AdditionalTopbar from './components/additionalTopbar/additionalTopbar';
 import { stickyScrollHandler } from './utilities/utilities';
 import { connect } from 'react-redux';
 import Sidedrawer from './components/sidedrawer/sidedrawer';
-// import BookAppointment from './pages/bookAppointment/bookAppointment';
 import Footer from './components/footer/footer';
 import { ToastContainer, Bounce } from 'react-toastify';
 import PaymentRedirect from './pages/bookAppointment/paymentRedirect/paymentRedirect';
@@ -19,6 +18,8 @@ const Massage = lazy(() => import('./pages/massage/massage'));
 const Massages = lazy(() => import('./pages/massages/massages'));
 const BookAppointment = lazy(() => import('./pages/bookAppointment/bookAppointment'));
 const Service = lazy(() => import('./pages/bookAppointment/service/service'));
+const About = lazy(() => import('./pages/about/about'));
+const Contact = lazy(() => import('./pages/contact/contact'));
 
 function App({ mobileWidth, userInput }) {
 
@@ -28,9 +29,6 @@ function App({ mobileWidth, userInput }) {
     window.addEventListener('resize', () => stickyScrollHandler(topbar, mobileWidth));
     window.addEventListener('scroll', () => stickyScrollHandler(topbar, mobileWidth));
   }, []);
-
-  console.log(userInput);
-  
 
   return (
       <div className="app">
@@ -67,6 +65,8 @@ function App({ mobileWidth, userInput }) {
             <Route path='/stripe/payment-redirect' element={<PaymentRedirect />} />
             <Route path='/massage/:massageId' element={<Suspense fallback={'loading...'}><Massage /></Suspense>}/>
             <Route path='/massages' element={<Suspense fallback={'loading...'}><Massages /></Suspense>}/>
+            <Route path='/about' element={<Suspense fallback={<div>loading...</div>}><About /></Suspense>}/>
+            <Route path='/contact' element={<Suspense fallback={<div>loading...</div>}><Contact /></Suspense>}/>
         </Routes>
         <Footer />
       </div>

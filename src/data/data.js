@@ -17,49 +17,49 @@ export const massages = [
     {
         id: 1,
         type: 'Deep tissue massage',
-        text: 'Deep tissue massage',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit . Fugit odio iste natus iure labore minima soluta aliquid ullam accusamus quibusdam, ipsam vel eos quisquam qui necessitatibus cum delectus autem voluptatibus. ',
         img: m1
     },
     {
         id: 2,
         type: 'Swedish massage',
-        text: 'Swedish massage',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit . Fugit odio iste natus iure labore minima soluta aliquid ullam accusamus quibusdam, ipsam vel eos quisquam qui necessitatibus cum delectus autem voluptatibus. ',
         img: m2
     },
     {
         id: 3,
         type: 'Sports massage',
-        text: 'Sports massage',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit . Fugit odio iste natus iure labore minima soluta aliquid ullam accusamus quibusdam, ipsam vel eos quisquam qui necessitatibus cum delectus autem voluptatibus. ',
         img: m1
     },
     {
         id: 4,
         type: 'Hot stone massage',
-        text: 'Hot stone massage',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit . Fugit odio iste natus iure labore minima soluta aliquid ullam accusamus quibusdam, ipsam vel eos quisquam qui necessitatibus cum delectus autem voluptatibus. ',
         img: m8
     },
     {
         id: 5,
         type: 'Indian head massage',
-        text: 'Indian head massage',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit . Fugit odio iste natus iure labore minima soluta aliquid ullam accusamus quibusdam, ipsam vel eos quisquam qui necessitatibus cum delectus autem voluptatibus. ',
         img: m5
     },
     {
         id: 6,
         type: 'Sculpting facial massage',
-        text: 'Sculpting facial massage',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit . Fugit odio iste natus iure labore minima soluta aliquid ullam accusamus quibusdam, ipsam vel eos quisquam qui necessitatibus cum delectus autem voluptatibus. ',
         img: m6
     },
     {
         id: 7,
         type: 'Aromatherapy massage',
-        text: 'Aromatherapy massage',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit . Fugit odio iste natus iure labore minima soluta aliquid ullam accusamus quibusdam, ipsam vel eos quisquam qui necessitatibus cum delectus autem voluptatibus. ',
         img: m1
     },
     {
         id: 8,
         type: 'Lymphatic draining massage',
-        text: 'Lymphatic draining massage',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit . Fugit odio iste natus iure labore minima soluta aliquid ullam accusamus quibusdam, ipsam vel eos quisquam qui necessitatibus cum delectus autem voluptatibus. ',
         img: m4
     },
 
