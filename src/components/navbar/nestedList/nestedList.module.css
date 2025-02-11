@@ -1,12 +1,12 @@
 .nestedList {
     width: 100%;
-    padding: 20px;
+    padding: 50px 40px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: rgb(252, 252, 252);
     gap: 20px;
     list-style: none;
 }
@@ -28,11 +28,12 @@
 }
 
 .nestedLink:hover {
-    color: white;
+    color: #DD88CF;
 }
 
 @media (max-width: 767px) {
     .nestedList {
+        padding: 0;
         background-color: inherit;
     }
 

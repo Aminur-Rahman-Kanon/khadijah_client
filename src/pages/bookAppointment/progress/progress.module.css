@@ -24,7 +24,7 @@
 
 .textSmallProgress {
     font-size: 1rem;
-    color: #f9aab4;
+    color: #DD88CF;
     font-weight: bolder;
     margin: 5px 0;
 }
@@ -59,13 +59,13 @@
 
 .icon {
     font-size: 15px;
-    color: #f9aab4;
-    background-color: #f9aab4;
+    color: #DD88CF;
+    background-color: #DD88CF;
     border-radius: 50%;
 }
 
 .line {
     width: calc(100% - 20px);
     height: 1px;
-    background-color: #f9aab4;
+    background-color: #DD88CF;
 }

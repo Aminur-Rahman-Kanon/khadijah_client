@@ -30,7 +30,7 @@
 .headingSmallPink {
     font-size: 1rem;
     font-weight: 600;
-    color: #fa99b4;
+    color: #DD88CF;
     margin: 10px auto;
     text-align: center;
 }
@@ -153,7 +153,7 @@
     content: '';
     width: 30px;
     height: 2px;
-    background-color: #fa99b4;
+    background-color: #DD88CF;
     border-radius: 20px;
     border: none;
 }
@@ -193,9 +193,9 @@
     height: 40px;
     padding: 10px 20px;
     box-sizing: border-box;
-    border: 1px solid #fa99b4;
+    border: 1px solid #DD88CF;
     background-color: white;
-    color: #fa99b4;
+    color: #DD88CF;
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -206,7 +206,7 @@
 }
 
 .link:hover {
-    background-color: #fa789d;
+    background-color: #f09de2;
     color: white;
 }
 

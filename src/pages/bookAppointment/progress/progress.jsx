@@ -26,7 +26,7 @@ const Progress = ({ serviceElement }) => {
 
         if (innerWidth >= 767){
             for (let i=0; i<startIndex; i++){
-                elements[i].children[1].style.backgroundColor = '#f9aab4'
+                elements[i].children[1].style.backgroundColor = '#DD88CF'
             }
     
             for (let i = startIndex; i<elements.length; i++){
@@ -35,9 +35,9 @@ const Progress = ({ serviceElement }) => {
         }
         else {
             for (let i=0; i<startIndex; i++){
-                elements[i].children[0].children[0].style.backgroundColor = '#f9aab4';
-                elements[i].children[0].children[0].style.color = '#f9aab4';
-                // elements[i].children[1].children[0].style.backgroundColor = '#f9aab4';
+                elements[i].children[0].children[0].style.backgroundColor = '#DD88CF';
+                elements[i].children[0].children[0].style.color = '#DD88CF';
+                // elements[i].children[1].children[0].style.backgroundColor = '#DD88CF';
                 
             }
             

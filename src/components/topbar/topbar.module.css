@@ -10,7 +10,7 @@
 }
 
 .logo {
-    width: 200px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +31,7 @@
 
 @media (max-width: 767px) {
     .main {
-        background-color: #74747480;
+        background-color: #eeeeee00;
     }
 
     .logo {

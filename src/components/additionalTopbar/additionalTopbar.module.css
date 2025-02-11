@@ -48,12 +48,12 @@
     justify-content: center;
     align-items: center;
     transition: color 0.6s ease;
-    color: #f9aab4;
+    color: #DD88CF!important;
 }
 
 
 .link:hover {
-    color: #fd8998;
+    color: #b57ab3;
 }
 
 @media (max-width: 767px) {

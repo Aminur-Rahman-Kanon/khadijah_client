@@ -3,7 +3,6 @@ import './selectDate.css';
 import { Calendar } from 'react-calendar';
 import { connect } from 'react-redux';
 import { actions } from '../../../redux/actions';
-import selectTime from '../selectime/selectTime';
 import SelectTime from '../selectime/selectTime';
 
 function SelectDate ({ userInput, setUserInput }) {

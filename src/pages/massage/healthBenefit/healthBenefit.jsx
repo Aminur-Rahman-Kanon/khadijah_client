@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './healthBenefit.module.css';
-import bg from '../../../assets/healthBenefit/bg.png';
+import bg from '../../../assets/healthBenefit/bg_2.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 

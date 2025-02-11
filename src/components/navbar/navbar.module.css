@@ -24,12 +24,13 @@
 
 .nestedList {
     position: absolute;
-    top: 4.5%;
+    top: 10px;
     left: 50%;
-    transform: translate(-50%, 4.5%);
+    transform: translate(-50%, 10px);
     /* width: 100%; */
     min-width: 280px;
     display: none;
+    z-index: 1;
 }
 
 .item {

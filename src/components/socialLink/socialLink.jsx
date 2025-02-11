@@ -6,11 +6,11 @@ import { faFacebook, faXTwitter, faInstagram, faLinkedin } from '@fortawesome/fr
 const stylesPallete = {
     smallPink: {
         fontSize: '15px',
-        color: '#f9aab4'
+        color: '#DD88CF'
     },
     largePink: {
         fontSize: '20px',
-        color: '#f9aab4'
+        color: '#DD88CF'
     },
     largeWhite: {
         fontSize: '20px',

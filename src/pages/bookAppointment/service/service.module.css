@@ -17,7 +17,7 @@
 .headingSmallBlack {
     font-size: 1rem;
     font-weight: bolder;
-    color: #f9aab4;
+    color: #DD88CF;
     margin: 0;
 }
 
@@ -38,7 +38,7 @@
     border-radius: 0;
     background-color: white;
     color: black;
-    outline: #f9aab4;
+    outline: #DD88CF;
 }
 
 .option {

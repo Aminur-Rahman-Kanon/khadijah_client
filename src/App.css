@@ -1,8 +1,11 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Abel&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Cinzel:wght@400..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* primary color: */
-/* #f9aab4 */
+/* primary color:
+#b57ab3
+#DD88CF */
 
 html, body {
   margin: 0;
@@ -12,20 +15,20 @@ html, body {
 
 .app {
   position: relative;
-  font-family: "Roboto", serif;
+  /* font-family: "Roboto", serif;
   font-optical-sizing: auto;
   font-style: normal;
+  font-variation-settings:
+    "wdth" 100; */
+  
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
   font-variation-settings:
     "wdth" 100;
 }
 
 .topbar {
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-top: 4px;
   box-sizing: border-box;
   background-color: #eeeeee;
   z-index: 2;
@@ -33,6 +36,6 @@ html, body {
 
 @media (max-width: 767px) {
   .topbar {
-    background-color: #eeeeee00;
+    background-color: #3e3e3ee6;
   }
 }

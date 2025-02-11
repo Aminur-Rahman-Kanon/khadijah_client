@@ -1,27 +1,28 @@
 import React from 'react';
 import styles from './footer.module.css';
-import face from '../../assets/logo/face.png';
+import sample from '../../assets/logo/logo_sample_2.png';
 import BookNow from '../bookNow/bookNow';
 import Sociallink from '../socialLink/socialLink';
+
 
 const Footer = () => {
   return (
     <div className={styles.container}>
         <div className={styles.leftItem}>
             <div className={styles.logoContainer}>
-                <img src={face} alt='masssge' className={styles.logo} />
+                <img src={ sample } alt='masssge' className={styles.logo} />
             </div>
             <h2 className={styles.headerLargeWhite}>Welcome to one of the best therapeutic massage studios in your area!</h2>
             <div className={styles.bookNowBtn}>
-                <BookNow path={'/book-appointment'}/>
+                <BookNow path={'/bookings'}/>
             </div>
         </div>
         <div className={styles.rightItem}>
             <div className={styles.address}>
                 <div className={styles.content}>
                     <h3 className={styles.headerSmallWhite}>address</h3>
-                    <span className={styles.textSmallWhite}>36 st mary at hill</span>
-                    <span className={styles.textSmallWhite}>city of london, ec3r 8du</span>
+                    <span className={styles.textSmallWhite}>7 well court</span>
+                    <span className={styles.textSmallWhite}>city of london, ec4m 9dn</span>
                 </div>
                 <div className={styles.socialLink}>
                     <Sociallink style={'largePink'}/>

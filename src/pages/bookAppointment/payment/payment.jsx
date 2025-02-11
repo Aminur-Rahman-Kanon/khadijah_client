@@ -9,9 +9,10 @@ const Payment = ({ userInput, price }) => {
 
     const [clientSecret, setClientSecret] = useState(null);
     const [stripePromise, setStripePromise] = useState(null);
-    console.log('paymnet')
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+        
         if (!userInput.service) window.location.href = '/bookings/';
         const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
         setStripePromise(promise);
