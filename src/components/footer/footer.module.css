@@ -3,14 +3,14 @@
     padding: 30px;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-end;
     overflow: hidden;
     background-color: rgb(68, 68, 68);
 }
 
 .leftItem {
-    width: 50%;
+    width: 30%;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -88,7 +88,7 @@
 }
 
 .rightItem {
-    width: 50%;
+    width: 70%;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -96,8 +96,29 @@
     align-items: flex-start;
 }
 
+.openingHours {
+    width: 33%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.item {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.label {
+    /* fo */
+}
+
 .address {
-    width: 50%;
+    width: 33%;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -115,7 +136,7 @@
 }
 
 .headerSmallWhite {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: white;
     text-transform: capitalize;
@@ -123,7 +144,7 @@
 }
 
 .textSmallWhite {
-    font-size: 15px;
+    font-size: 1.2rem;
     font-weight: 500;
     color: white;
     text-transform: capitalize;
@@ -156,7 +177,7 @@
 }
 
 .contact {
-    width: 50%;
+    width: 33%;
     padding: 20px;
     box-sizing: border-box;
     display: flex;

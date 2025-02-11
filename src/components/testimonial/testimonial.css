@@ -1,0 +1,16 @@
+.wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 25px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.bottom {
+    width: 100%;
+    
+}

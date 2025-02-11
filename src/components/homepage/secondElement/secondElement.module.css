@@ -1,5 +1,6 @@
 .main {
     width: 100%;
+    max-width: 1400px;
     margin: 50px auto;
     box-sizing: border-box;
     display: flex;
@@ -82,7 +83,7 @@
     padding: 10px;
     box-sizing: border-box;
     display:grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 35px;
     justify-content: center;
     align-items: center;
@@ -211,11 +212,11 @@
 }
 
 
-@media (max-width: 1300px) {
+/* @media (max-width: 1300px) {
     .itemContainer {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-}
+} */
 
 @media (max-width: 1023px) {
     .itemContainer {

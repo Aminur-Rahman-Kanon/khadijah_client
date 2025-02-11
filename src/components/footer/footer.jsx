@@ -18,6 +18,13 @@ const Footer = () => {
             </div>
         </div>
         <div className={styles.rightItem}>
+            <div className={styles.openingHours}>
+                <h3 className={styles.headerSmallWhite}>Opening hours</h3>
+                <div className={styles.item}>
+                    <span className={styles.textSmallWhite}>Mon & Sat: </span>
+                    <span className={styles.textSmallWhite} style={{marginLeft: '5px'}}>10 AM to 8PM</span>
+                </div>
+            </div>
             <div className={styles.address}>
                 <div className={styles.content}>
                     <h3 className={styles.headerSmallWhite}>address</h3>

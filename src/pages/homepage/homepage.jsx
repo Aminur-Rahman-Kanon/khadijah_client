@@ -5,6 +5,8 @@ import SecondElement from '../../components/homepage/secondElement/secondElement
 import ThirdElement from '../../components/homepage/thirdElement/thirdElement';
 import Services from '../../components/homepage/services/services';
 import Map from '../massage/map/map';
+import Testimonial from '../../components/testimonial/testimonial';
+import HowToFindUs from '../../components/howToFIndUs/howToFindUs';
 
 const Homepage = () => {
 
@@ -16,8 +18,10 @@ const Homepage = () => {
         <div className={styles.main}>
             <Banner />
             <SecondElement />
-            <ThirdElement />
-            <Map />
+            {/* <ThirdElement /> */}
+            <Testimonial />
+            {/* <Map /> */}
+            <HowToFindUs />
             {/* <Services /> */}
         </div>
   )

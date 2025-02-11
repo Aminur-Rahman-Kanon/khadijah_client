@@ -22,15 +22,15 @@ export const massages = [
     },
     {
         id: 2,
-        type: 'Swedish massage',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit . Fugit odio iste natus iure labore minima soluta aliquid ullam accusamus quibusdam, ipsam vel eos quisquam qui necessitatibus cum delectus autem voluptatibus. ',
-        img: m2
-    },
-    {
-        id: 3,
         type: 'Sports massage',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit . Fugit odio iste natus iure labore minima soluta aliquid ullam accusamus quibusdam, ipsam vel eos quisquam qui necessitatibus cum delectus autem voluptatibus. ',
         img: m1
+    },
+    {
+        id: 3,
+        type: 'Swedish massage',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit . Fugit odio iste natus iure labore minima soluta aliquid ullam accusamus quibusdam, ipsam vel eos quisquam qui necessitatibus cum delectus autem voluptatibus. ',
+        img: m2
     },
     {
         id: 4,
@@ -63,4 +63,27 @@ export const massages = [
         img: m4
     },
 
+]
+
+export const testimonial = [
+    {
+        id: 1,
+        name: 'Peter Brance',
+        message: 'A couple of months ago I was in terrible pain. Running had me limping and in agony. So I started looking for a massage near me. And I found A to Zen therapies, my lifesavers! Their fantastic team got me back on my feet (and the track) in no time. Now, I book my weekly session to keep myself running smoothly.'
+    },
+    {
+        id: 2,
+        name: 'Albert Einstein',
+        message: 'A couple of months ago I was in terrible pain. Running had me limping and in agony. So I started looking for a massage near me. And I found A to Zen therapies, my lifesavers! Their fantastic team got me back on my feet (and the track) in no time. Now, I book my weekly session to keep myself running smoothly.'
+    },
+    {
+        id: 3,
+        name: 'David Muiller',
+        message: 'A couple of months ago I was in terrible pain. Running had me limping and in agony. So I started looking for a massage near me. And I found A to Zen therapies, my lifesavers! Their fantastic team got me back on my feet (and the track) in no time. Now, I book my weekly session to keep myself running smoothly.'
+    },
+    {
+        id: 4,
+        name: 'Shephard Hawkins',
+        message: 'A couple of months ago I was in terrible pain. Running had me limping and in agony. So I started looking for a massage near me. And I found A to Zen therapies, my lifesavers! Their fantastic team got me back on my feet (and the track) in no time. Now, I book my weekly session to keep myself running smoothly.'
+    }
 ]

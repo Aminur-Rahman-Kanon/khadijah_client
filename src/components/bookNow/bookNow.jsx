@@ -6,7 +6,7 @@ const BookNow = ({ path }) => {
     return (
         <div className={styles.main}>
             <Link to={path} className={styles.link}>
-                book now
+                make an appointment
             </Link>
         </div>
     )

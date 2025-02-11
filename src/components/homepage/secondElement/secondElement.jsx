@@ -17,7 +17,7 @@ const SecondElement = ({ selectService }) => {
         Aos.init({ duration: '1000', once: true, disable: () => window.innerWidth < 767 })
     }, [])
 
-    const massage = massages.slice(0, 4).map(m => <div data-aos='fade-down-right' data-aos-easing='ease-out-cubic' data-aos-delay={250*m.id} key={m.id} className={styles.item}>
+    const massage = massages.slice(0, 3).map(m => <div data-aos='fade-down-right' data-aos-easing='ease-out-cubic' data-aos-delay={250*m.id} key={m.id} className={styles.item}>
         <div className={styles.imgContainer}>
             <div className={styles.imgRadius}>
                 <img alt={m.type} src={m.img} className={styles.img}/>
@@ -38,12 +38,12 @@ const SecondElement = ({ selectService }) => {
         <div className={styles.main}>
             <div className={styles.wrapper}>
                 <div className={styles.top}>
-                    <h3 className={styles.headingSmallPink}>Welcome to Our</h3>
-                    <h2 className={styles.headingLargeBlack}>massage therapy center</h2>
+                    <h3 className={styles.headingSmallPink}>Welcome to</h3>
+                    <h2 className={styles.headingLargeBlack}>divine touch by ola</h2>
                     <span className={styles.borderContainer}>
                         <img alt='massage' src={border} className={styles.border}/>
                     </span>
-                    <span className={styles.textSmallBlack}>You deserve better than a rushed massage by a rookie herapist in a place that makes you feel more stressed</span>
+                    <span className={styles.textSmallBlack}>Experience the art of true relaxation. At Divine Touch by Ola, every session is tailored to melt away stress, rejuvenate your body, and restore your inner balance—all in a serene space designed for your ultimate comfort."</span>
                 </div>
                 <div className={styles.body}>
                     <div className={styles.itemContainer}>
