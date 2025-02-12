@@ -19,7 +19,7 @@ const Payment = ({ userInput, price }) => {
     }, [])
     
     useEffect(() => {
-        fetch('http://localhost:4000/payment-intent', {
+        fetch('https://khadijah-server.onrender.com/payment-intent', {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json',
@@ -37,7 +37,7 @@ const Payment = ({ userInput, price }) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>
-                <h2 className={styles.headingLargeBlack}>Great, that will be {price || 0}.</h2>
+                <h2 className={styles.headingLargeBlack}>Great, that will be {price/100 || 0}.</h2>
             </div>
             <div className={styles.payment}>
                 {

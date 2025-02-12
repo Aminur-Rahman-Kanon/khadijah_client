@@ -9,6 +9,7 @@ function SelectDate ({ userInput, setUserInput }) {
 
     useEffect(() => {
         if (!userInput.service) window.location.href = '/bookings/';
+        window.scrollTo(0, 0);
     }, [])
 
     return (

@@ -1,0 +1,27 @@
+.ratingContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rating {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    background-color: grey;
+    overflow: hidden;
+}
+
+.star {
+    font-size: 1rem;
+    color: lightgray;
+}
+
+.star.activeStar  {
+    color: white;
+}

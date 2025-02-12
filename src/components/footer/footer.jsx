@@ -13,17 +13,22 @@ const Footer = () => {
                 <img src={ sample } alt='masssge' className={styles.logo} />
             </div>
             <h2 className={styles.headerLargeWhite}>Welcome to one of the best therapeutic massage studios in your area!</h2>
+            <div className={styles.openingHours}>
+                <h3 className={styles.headerSmallWhite} style={{fontSize: '1.2rem'}}>Opening hours</h3>
+                <div className={styles.item}>
+                    <span className={styles.textSmallWhite} style={{fontSize: '1rem', marginRight: '5px'}}>Mon & Sat: </span>
+                    <span className={styles.textSmallWhite} style={{fontSize: '1rem'}}>10 AM to 8PM</span>
+                </div>
+            </div>
             <div className={styles.bookNowBtn}>
                 <BookNow path={'/bookings'}/>
             </div>
         </div>
         <div className={styles.rightItem}>
-            <div className={styles.openingHours}>
-                <h3 className={styles.headerSmallWhite}>Opening hours</h3>
-                <div className={styles.item}>
-                    <span className={styles.textSmallWhite}>Mon & Sat: </span>
-                    <span className={styles.textSmallWhite} style={{marginLeft: '5px'}}>10 AM to 8PM</span>
-                </div>
+            <div className={styles.contact}>
+                <h3 className={styles.headerSmallWhite}>say hello</h3>
+                <a href='tel:00447950999729' className={styles.tel}>+447950999729</a>
+                <a href='mailto:info@pacificlift.net' className={styles.tel}>info@khadijah.net</a>
             </div>
             <div className={styles.address}>
                 <div className={styles.content}>
@@ -34,11 +39,6 @@ const Footer = () => {
                 <div className={styles.socialLink}>
                     <Sociallink style={'largePink'}/>
                 </div>
-            </div>
-            <div className={styles.contact}>
-                <h3 className={styles.headerSmallWhite}>say hello</h3>
-                <a href='tel:00447950999729' className={styles.tel}>+447950999729</a>
-                <a href='mailto:info@pacificlift.net' className={styles.tel}>info@khadijah.net</a>
             </div>
         </div>
     </div>

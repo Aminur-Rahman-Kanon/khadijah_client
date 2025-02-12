@@ -10,7 +10,7 @@
 }
 
 .leftItem {
-    width: 30%;
+    width: 40%;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -32,7 +32,7 @@
 }
 
 .headerLargeWhite {
-    width: 350px;
+    /* width: 350px; */
     font-size: 1rem;
     font-weight: 500;
     color: white;
@@ -88,17 +88,18 @@
 }
 
 .rightItem {
-    width: 70%;
+    width: 60%;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: flex-start;
+    gap: 20px;
 }
 
 .openingHours {
-    width: 33%;
-    padding: 20px;
+    width: 100%;
+    padding: 10px 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -113,12 +114,8 @@
     align-items: center;
 }
 
-.label {
-    /* fo */
-}
-
 .address {
-    width: 33%;
+    width: 45%;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -177,7 +174,7 @@
 }
 
 .contact {
-    width: 33%;
+    width: 45%;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -195,7 +192,7 @@
     display: block;
 }
 
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
     .container {
         flex-direction: column;
     }
@@ -211,19 +208,22 @@
     .headerLargeWhite {
         width: auto;
     }
-}
+} */
 
 @media (max-width: 767px) {
     .container {
-        padding: 50px 30px;
+        padding: 10px;
+        flex-direction: column;
     }
 
 
     .leftItem {
+        width: 100%;
         padding: 0;
     }
 
     .rightItem {
+        width: 100%;
         padding: 0;
         flex-direction: column;
     }

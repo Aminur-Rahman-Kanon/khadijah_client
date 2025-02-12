@@ -4,11 +4,15 @@ import Button from "../../../components/button/button";
 import { connect } from "react-redux";
 import { actions } from "../../../redux/actions";
 import { massages } from '../../../data/data';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Service = ({ userInput, switchToElements, takeUserInput }) => {
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
         
     const massage = massages.map(m => <option key={m.id} value={m.type} className={styles.option}>{m.type}</option>)
 

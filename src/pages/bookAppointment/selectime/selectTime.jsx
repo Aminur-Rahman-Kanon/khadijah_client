@@ -13,9 +13,9 @@ const durations = {
 }
 
 const prices = {
-    '30 minutes': '£45',
-    '60 minutes': '£80',
-    '90 minutes': '£115',
+    '30 minutes': 4500,
+    '60 minutes': 8000,
+    '90 minutes': 11500,
 }
 
 const SelectTime = ({ userInput, setBeginTime, setEndTime, setDurationInput, switchToElements }) => {

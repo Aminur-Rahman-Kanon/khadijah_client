@@ -78,7 +78,7 @@ const PaymentGateway = ({ userInput, toggleElement, clearData }) => {
                         }}/>
                     </div>
                     <div className='btn'>
-                        <Button text={`Pay £ ${userInput.price} pound`} isPending={spinner} handler={handleSubmit}/>
+                        <Button text={`Pay £ ${userInput.price/100} pound`} isPending={spinner} handler={handleSubmit}/>
                     </div>
                 </div>
             </form>
