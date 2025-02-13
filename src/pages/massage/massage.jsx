@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styles from './massage.module.css';
-import bg2 from '../../assets/massages/2.jpg';
 import Map from './map/map';
 import Button from '../../components/button/button';
 import HealthBenefit from '../massage/healthBenefit/healthBenefit';
 import { connect } from 'react-redux';
 import { actions } from '../../redux/actions';
+import { massage } from '../../data/data';
 
 const Massage = ({ selectService }) => {
 
@@ -22,12 +22,67 @@ const Massage = ({ selectService }) => {
         return navigate('/bookings/service', { replace: true });
     }
 
+    //create an object of massage type then use it throwout the displayMassage
+    const msg = massage[massageId.toLowerCase()] || {};
+
+    const displayMassage = Object.keys(msg).length ?
+        <div className={styles.left}>
+            <h3 className={styles.headerSmallBlack}>What is {msg.title}</h3>
+            <span className={styles.textSmallBlack}>{msg.intro}</span>
+
+            {
+                msg.benefit.length ?
+                <div className={styles.item}>
+                    <h3 className={styles.headerSmallBlack}>benefits:</h3>
+                    {<ul className={styles.listContainer}>
+                        {msg.benefit.map((b, i) => <li key={i} className={styles.list}>{b}</li>)}
+                    </ul>
+                    }
+                </div>
+                :
+                null
+            }
+
+            <div className={styles.item}>
+                <h3 className={styles.headerSmallBlack}>does it hurt?</h3>
+                <p className={styles.textSmallBlack}>{msg.optional}</p>
+            </div>
+
+            {
+                msg.preTreatment.length ?
+                <div className={styles.item}>
+                    <h3 className={styles.headerSmallBlack}>pre-treatment:</h3>
+                    <ul className={styles.listContainer}>
+                        {msg.preTreatment.map((p, i) => <li key={i+10} className={styles.list}>{p}</li>)}
+                    </ul>
+                </div>
+                :
+                null
+            }
+
+            {
+                msg.afterCare.length ?
+                <div className={styles.item}>
+                    <h3 className={styles.headerSmallBlack}>aftercare:</h3>
+                    <ul className={styles.listContainer}>
+                        {msg.afterCare.map((c, i) => <li key={i+20} className={styles.list}>{c}</li>)}
+                    </ul>        
+                </div>
+                :
+                null
+            }
+        </div>
+        :
+        <div className={styles.left}>
+            no information
+        </div>
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.singleBgWithText}>
                 <div className={styles.singleBgContainer}>
                     <div className={styles.singleBgWithBanner}>
-                        <img src={bg2} alt={massageId} className={styles.singleBg} />
+                        <img src={msg.img || null} alt={massageId} className={styles.singleBg} />
                     </div>
                     <div className={styles.banner}>
                         <h1 className={styles.headingLargeWhite}>{massageId || 'no information'}</h1>
@@ -36,19 +91,8 @@ const Massage = ({ selectService }) => {
             </div>
 
             <div className={styles.body}>
-                <div className={styles.left}>
-                    <div className={styles.textContainer}>
-                        <span className={styles.textSmallBlack}>From muscle-specific deep tissue massage, swedish massage and sports massage, our therapists draw from a variety of modalities to create each session specifically for you. A general health intake before your massage and post-session follow up may include self-care exercises or physician referrals. We keep confidential SOAP notes and individual treatment plans for all clients. Because our massage therapists are licensed and insured by the New York State Office of the Professions, you are in safe hands. For chronic pain management, best results are achieved with regular visits
-                        </span>
-                        <span className={styles.textSmallBlack}>Find out more about the therapeutic benefits of massage therapy.</span>
-                        <h3 className={styles.headerSmallBlack}>Hassle free booking</h3>
-                        <ul className={styles.listContainer}>
-                            <li className={styles.list}>Tax included in price</li>
-                            <li className={styles.list}>24-hour cancellation policy (read our FAQs for more details)</li>
-                            <li className={styles.list}>If this is your first visit, make sure to fill out the new patient intake form online before you arrive.</li>
-                            <li className={styles.list}>Regular client? Save up to 15% off the regular price with package plans.</li>
-                        </ul>
-                    </div>
+                <div className={styles.leftContainer}>
+                    {displayMassage}
                 </div>
                 <div className={styles.right}>
                     <div className={styles.innerRight}>

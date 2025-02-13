@@ -1,21 +1,21 @@
 import React from 'react';
 import styles from './massages.module.css';
 import bg from '../../assets/massages/5.jpg';
-import { massages } from '../../data/data';
+import { massage } from '../../data/data';
 import { Link } from 'react-router-dom';
 import border from '../../assets/others/horizontal_line.png';
 
 const Massages = () => {
 
-    const displayMassages = massages.map(m => <div className={styles.item}>
+    const displayMassages = Object.values(massage).map(m => <div className={styles.item}>
         <div className={styles.smallBgContainer}>
-            <img src={m.img} alt={m.type} className={styles.smallBg} />
+            <img src={m.img} alt={m.title} className={styles.smallBg} />
         </div>
         <div className={styles.itemBanner}>
-            <h2 className={styles.headingMediumBlack}>{m.type}</h2>
-            <span className={styles.textSmallBlack}>{m.text}</span>
+            <h2 className={styles.headingMediumBlack}>{m.title}</h2>
+            <span className={styles.textSmallBlack}>{m.intro}</span>
             <div className={styles.linkContainer}>
-                <Link to={`/massage/${m.type}`} className={styles.link}>Explore more</Link>
+                <Link to={`/massage/${m.title}`} className={styles.link}>Explore more</Link>
             </div>
         </div>
     </div>)

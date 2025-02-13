@@ -60,6 +60,7 @@
     font-size: 1.5rem;
     font-weight: 500;
     color: gray;
+    margin: 10px 0;
 }
 
 .bgContainer {
@@ -123,9 +124,10 @@
     margin: 5px 0;
 }
 
-p {
+.textSmallBlack {
     text-align: center;
     line-height: 30px;
+    margin: 10px 0;
 }
 
 .carousel.carousel-slider .control-arrow {
@@ -134,6 +136,20 @@ p {
 
 .carousel .control-dots .dot {
     background-color: #DD88CF;
+}
+
+.ratingContainer {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.ratingIcon {
+    font-size: 20px;
+    color: #DD88CF;
 }
 
 @media (max-width: 767px) {

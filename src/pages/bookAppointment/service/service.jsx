@@ -3,7 +3,7 @@ import styles from './service.module.css';
 import Button from "../../../components/button/button";
 import { connect } from "react-redux";
 import { actions } from "../../../redux/actions";
-import { massages } from '../../../data/data';
+import { massage } from '../../../data/data';
 import { useNavigate } from 'react-router-dom';
 
 const Service = ({ userInput, switchToElements, takeUserInput }) => {
@@ -14,7 +14,7 @@ const Service = ({ userInput, switchToElements, takeUserInput }) => {
         window.scrollTo(0, 0);
     }, [])
         
-    const massage = massages.map(m => <option key={m.id} value={m.type} className={styles.option}>{m.type}</option>)
+    const service = Object.values(massage).map((m, i) => <option key={i} value={m.title} className={styles.option}>{m.title}</option>)
 
     const btnHander = () => {
         switchToElements('time');
@@ -32,7 +32,7 @@ const Service = ({ userInput, switchToElements, takeUserInput }) => {
                         className={styles.select}
                         onChange={(e) => takeUserInput(e.target.value)}>
                     <option disabled className={styles.option}>Select service</option>
-                    {massage}
+                    {service}
                 </select>
             </div>
             <div className={styles.footer}>

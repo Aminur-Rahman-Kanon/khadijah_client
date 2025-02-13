@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from './secondElement.module.css';
 import { useNavigate, Link } from "react-router-dom";
-import { massages } from '../../../data/data';
+import { massage } from '../../../data/data';
 import border from '../../../assets/others/horizontal_line.png';
 import { connect } from "react-redux";
 import { actions } from "../../../redux/actions";
@@ -17,16 +17,16 @@ const SecondElement = ({ selectService }) => {
         Aos.init({ duration: '1000', once: true, disable: () => window.innerWidth < 767 })
     }, [])
 
-    const massage = massages.slice(0, 3).map(m => <div data-aos='fade-down-right' data-aos-easing='ease-out-cubic' data-aos-delay={250*m.id} key={m.id} className={styles.item}>
+    const displayMassage = Object.values(massage).slice(0, 3).map(m => <div data-aos='fade-down-right' data-aos-easing='ease-out-cubic' data-aos-delay={250*m.id} key={m.id} className={styles.item}>
         <div className={styles.imgContainer}>
             <div className={styles.imgRadius}>
-                <img alt={m.type} src={m.img} className={styles.img}/>
+                <img alt={m.title} src={m.img} className={styles.img}/>
             </div>
         </div>
         <div className={styles.banner}>
-            <h3 className={styles.headingMediumBlack}>{m.type}</h3>
-            <span className={styles.textExtraSmallBlack}>{m.text}</span>
-            <Button text={'Book now'} handler={() => navigateHandler(m.type)}/>
+            <h3 className={styles.headingMediumBlack}>{m.title}</h3>
+            <span className={styles.textExtraSmallBlack}>{m.intro}</span>
+            <Button text={'Book now'} handler={() => navigateHandler(m.title)}/>
         </div>
     </div>)
 
@@ -47,7 +47,7 @@ const SecondElement = ({ selectService }) => {
                 </div>
                 <div className={styles.body}>
                     <div className={styles.itemContainer}>
-                        {massage}
+                        {displayMassage}
                     </div>
                 </div>
                 <div className={styles.linkContainer}>

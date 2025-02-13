@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './nestedList.module.css';
-import { massages } from '../../../data/data';
-import { Link } from 'react-router-dom';
+import { massage } from '../../../data/data';
 
-const nestedList = massages.map(m => <li key={m.id} className={styles.list}>
-    <a href={`/massage/${m.type}`} className={styles.nestedLink}>{m.type}</a>
+const nestedList = Object.values(massage).map(m => <li key={m.id} className={styles.list}>
+    <a href={`/massage/${m.title}`} className={styles.nestedLink}>{m.title}</a>
 </li>)
 
 const NestedList = () => {

@@ -4,19 +4,19 @@ import bg from '../../assets/about/bg.png';
 import { Link } from 'react-router-dom';
 import container1 from '../../assets/about/container1.png';
 import container2 from '../../assets/about/container2.jpg';
-import { massages } from '../../data/data';
+import { massage } from '../../data/data';
 
 const About = () => {
 
-    const displayFlexContainer = massages.map(m => <div className={styles.flexItem}>
+    const displayFlexContainer = Object.values(massage).map(m => <div className={styles.flexItem}>
         <div className={styles.flexBgContainer}>
             <div className={styles.flexRadius}>
-                <img src={m.img} alt='massage' className={styles.flexBg} />
+                <img src={m.img} alt={m.title} className={styles.flexBg} />
             </div>
         </div>
         <div className={styles.flexTextContainer}>
-            <h2 className={styles.headingMediumBlack}>{m.type}</h2>
-            <span className={styles.text}>{m.text}</span>
+            <h2 className={styles.headingMediumBlack}>{m.title}</h2>
+            <span className={styles.text}>{m.intro}</span>
         </div>
     </div>)
 

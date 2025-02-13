@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './banner.module.css';
 import 'aos/dist/aos.css';
 import banner3 from '../../../assets/banner/banner3.jpg';
-import banner4 from '../../../assets/banner/banner4.jpg';
+import banner4 from '../../../assets/banner/banner3.png';
 import banner2 from '../../../assets/banner/banner2.jpeg';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -28,11 +28,11 @@ const Banner = () => {
                     </div>
                     <div className={styles.banner}>
                         <h1 className={styles.headingLargeWhite}>
-                            <span className={styles.headingHead}>DIVINE TOUCH</span>
-                            <span className={styles.headingMiddle}>BY</span>
-                            <span className={styles.headingTail}>OLA</span>
+                            <span className={styles.headingHead}>welcome to</span>
+                            <span className={styles.headingMiddle}>divine touch by</span>
+                            <span className={styles.headingTail}>ola.</span>
                         </h1>
-                        <h3 className={styles.headingSmallWhite}>A place of well-being where you reset, recharge and restore. </h3>
+                        <h3 className={styles.headingSmallWhite}>A place of well-being where you reset, recharge and restore.</h3>
                         <div className={styles.btn}>
                             <BookNow path={'/bookings/'}/>
                         </div>
@@ -46,7 +46,7 @@ const Banner = () => {
                         <h1 className={styles.headingLargeWhite}>
                             <span className={styles.headingHead}>Welcome to</span>
                             <span className={styles.headingMiddle}>our</span>
-                            <span className={styles.headingTail}>therpay centre</span>
+                            <span className={styles.headingTail}>welness sanctuary.</span>
                         </h1>
                         <h3 className={styles.headingSmallWhite}>you owe yourself this moment. book appointment in just a click!</h3>
                         <div className={styles.btn}>
@@ -60,11 +60,11 @@ const Banner = () => {
                     </div>
                     <div className={styles.banner}>
                         <h1 className={styles.headingLargeWhite}>
-                            <span className={styles.headingHead}>Explore</span>
-                            <span className={styles.headingMiddle}>wide range of</span>
-                            <span className={styles.headingTail}>massage therapies</span>
+                            <span className={styles.headingHead}>Experience</span>
+                            <span className={styles.headingMiddle}>Experience the ultimate in</span>
+                            <span className={styles.headingTail}>massage therapy.</span>
                         </h1>
-                        <h3 className={styles.headingSmallWhite}>you owe yourself this moment. book appointment in just a click!</h3>
+                        <h3 className={styles.headingSmallWhite}>Treat yourself to this moment—book your appointment with just one click!</h3>
                         <div className={styles.btn}>
                             <Button text={'Explore Massages'} handler={() => window.location.href = '/massages'}/>
                         </div>

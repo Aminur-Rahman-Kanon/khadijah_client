@@ -205,8 +205,8 @@
 }
 
 .flexRadius {
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 190px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -217,6 +217,7 @@
 .flexBg {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .flexTextContainer {
@@ -230,7 +231,7 @@
 
 .headingMediumBlack {
     position: relative;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: 1px;
     margin: 10px 0;

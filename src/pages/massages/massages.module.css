@@ -73,7 +73,7 @@
 }
 
 .headingMediumBlack {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: rgb(49, 49, 49);
     font-weight: 600;
     margin: 20px auto;
@@ -136,6 +136,12 @@
 }
 
 .textSmallBlack {
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
     font-size: 1rem;
     font-weight: 400;
     color: rgb(49, 49, 49);
@@ -185,5 +191,13 @@
 
     .smallBgContainer {
         height: auto;
+    }
+
+    .textSmallBlack {
+        display: block;
+        -webkit-box-orient: unset;
+        -webkit-line-clamp: unset;
+        text-overflow: unset;
+        overflow: auto;
     }
 }
