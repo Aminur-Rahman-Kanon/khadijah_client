@@ -30,7 +30,7 @@
 
 .profileContainer {
     width: 350px;
-    /* height: 450px; */
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,6 +53,8 @@
 
 .bgContainer {
     width: 100%;
+    height: 600px;
+    margin: 25px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -361,12 +363,20 @@
         align-items: center;
     }
 
+    .bgContainer {
+        height: auto;
+    }
+
     .containerFluidVertical {
         padding: 10px;
     }
 
     .profileContainer {
         width: 100%;
+    }
+
+    .profile {
+        object-fit: contain;
     }
     
     .flexItem {

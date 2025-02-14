@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './about.module.css';
 import bg from '../../assets/about/bg.png';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,10 @@ import { massage } from '../../data/data';
 import admin from '../../assets/others/admin.jpeg';
 
 const About = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     const displayFlexContainer = Object.values(massage).map(m => <div className={styles.flexItem}>
         <div className={styles.flexBgContainer}>
