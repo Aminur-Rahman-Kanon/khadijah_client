@@ -13,7 +13,7 @@ const Testimonial = () => {
             <div className='top'>
                 <h1 className='headingLargeBlack'>What my clients say...</h1>
             </div>
-            <div class="swiper-pagination"></div>
+            <div className="swiper-pagination"></div>
                 <div className='swiper-wrapper'>
                     <Carousel autoPlay={true}
                             infiniteLoop={true}
@@ -146,9 +146,9 @@ const Testimonial = () => {
                             </div>
                         </div>
                 </Carousel>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-scrollbar"></div>
+                <div className="swiper-button-prev"></div>
+                <div className="swiper-button-next"></div>
+                <div className="swiper-scrollbar"></div>
             </div>
         </div>
     )

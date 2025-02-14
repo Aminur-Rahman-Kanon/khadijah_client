@@ -17,7 +17,7 @@ const SecondElement = ({ selectService }) => {
         Aos.init({ duration: '1000', once: true, disable: () => window.innerWidth < 767 })
     }, [])
 
-    const displayMassage = Object.values(massage).slice(0, 3).map(m => <div data-aos='fade-down-right' data-aos-easing='ease-out-cubic' data-aos-delay={250*m.id} key={m.id} className={styles.item}>
+    const displayMassage = Object.values(massage).slice(0, 3).map((m, i) => <div key={i} data-aos='fade-down-right' data-aos-easing='ease-out-cubic' data-aos-delay={250*i}className={styles.item}>
         <div className={styles.imgContainer}>
             <div className={styles.imgRadius}>
                 <img alt={m.title} src={m.img} className={styles.img}/>

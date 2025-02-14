@@ -13,7 +13,7 @@ const About = () => {
         window.scrollTo(0, 0);
     }, [])
 
-    const displayFlexContainer = Object.values(massage).map(m => <div className={styles.flexItem}>
+    const displayFlexContainer = Object.values(massage).map((m, i) => <div key={i} className={styles.flexItem}>
         <div className={styles.flexBgContainer}>
             <div className={styles.flexRadius}>
                 <img src={m.img} alt={m.title} className={styles.flexBg} />
