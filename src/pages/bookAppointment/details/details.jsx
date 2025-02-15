@@ -4,6 +4,7 @@ import styles from './details.module.css';
 import Button from "../../../components/button/button";
 import { connect } from "react-redux";
 import { actions } from "../../../redux/actions";
+import { emailValidation, phoneNumberValidation } from '../../../utilities/utilities';
 
 const Details = ({ userInput, setUserInput, switchToElements }) => {
 
@@ -11,7 +12,9 @@ const Details = ({ userInput, setUserInput, switchToElements }) => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [emailValidity, setEmailValidity] = useState(true);
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [phoneNumberValidity, setPhoneNumberValidity] = useState(true);
     const [notes, setNotes] = useState('');
 
     const [btnDisable, setBtnDisable] = useState(false);
@@ -22,13 +25,37 @@ const Details = ({ userInput, setUserInput, switchToElements }) => {
     }, [])
 
     useEffect(() => {
-        if (name && email && phoneNumber){
+        let timeId;
+        
+        if (email) {
+            timeId = setTimeout(() => {
+                emailValidation(email, setEmailValidity);
+            }, [1300])
+        }
+        
+        return () => clearTimeout(timeId);
+    }, [email])
+
+    useEffect(() => {
+        let timeId;
+
+        if (phoneNumber){
+            timeId = setTimeout(() => {
+                phoneNumberValidation(phoneNumber, setPhoneNumberValidity);
+            }, [1300])
+        }
+
+        return () => clearTimeout(timeId);
+    }, [phoneNumber])
+
+    useEffect(() => {
+        if (name && emailValidity && phoneNumberValidity){
             setBtnDisable(false)
         }
         else {
             setBtnDisable(true);
         }
-    }, [ name, email, phoneNumber, notes ])
+    }, [ name, emailValidity, phoneNumberValidity, notes ])
 
     const nextBtnHandler = async () => {
         await setUserInput({name, email, phoneNumber, notes});
@@ -44,7 +71,7 @@ const Details = ({ userInput, setUserInput, switchToElements }) => {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <span className={styles.textSmallBlack}>You selected a booking for <span className={styles.textHighlight}>{userInput.service}</span> at <span className={styles.textHighlight}>{userInput.beginTime}</span> for <span className={styles.textHighlight}>{userInput.duration}</span> on <span className={styles.textHighlight}>{userInput.date}</span>. The price for the service is <span className={styles.textHighlight}>£ {userInput.price/100}</span>.</span>
+                <span className={styles.textSmallBlack}>You selected a booking for <span className={styles.textHighlight}>{userInput.service}</span> at <span className={styles.textHighlight}>{userInput.beginTime}</span> for <span className={styles.textHighlight}>{userInput.duration}</span> on <span className={styles.textHighlight}>{userInput.date}</span>. The price for the service is <span className={styles.textHighlight}>£{userInput.price/100}</span>.</span>
                 <span className={styles.textSmallBlack}>Please provide your details in the form below to proceed with booking.</span>
             </div>
             <div className={styles.wrapper}>
@@ -60,15 +87,17 @@ const Details = ({ userInput, setUserInput, switchToElements }) => {
                 </div>
                 <div className={styles.field}>
                     <span className={styles.label}>Email</span>
-                    <div className={styles.inputContainer}>
+                    <div className={styles.inputContainer} style={emailValidity ? {border: '1px solid lightgray'} : {border: '1px solid red'}}>
                         <input type="email" placeholder="Email address" className={styles.input} onChange={(e) => setEmail(e.target.value)}/>
                     </div>
+                    <span className={styles.disppearMsg} style={emailValidity ? {display: 'none'} : {display: 'flex'}}>please enter an valid email</span>
                 </div>
                 <div className={styles.field}>
                     <span className={styles.label}>Phone number</span>
-                    <div className={styles.inputContainer}>
+                    <div className={styles.inputContainer} style={phoneNumberValidity ? {border: '1px solid lightgray'} : {border: '1px solid red'}}>
                         <input type="number" placeholder="Phone number" className={styles.input} onChange={(e) => setPhoneNumber(e.target.value)}/>
                     </div>
+                    <span className={styles.disppearMsg} style={phoneNumberValidity ? {display: 'none'} : {display: 'flex'}}>please enter an valid phone number</span>
                 </div>
                 <div className={styles.field}>
                     <span className={styles.label}>Notes</span>

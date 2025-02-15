@@ -19,7 +19,7 @@ const PaymentSuccess = () => {
             <div className={styles.footer}>
                 <span className={styles.textSmallBlack}>A confirmaion email has been sent to your email.</span>
                 <span className={styles.textSmallBlack}>Care to explore our wide range of massages?</span>
-                <Link to={'#'} className={styles.link}>See our massages</Link>
+                <Link to={'/massages'} className={styles.link}>See our massages</Link>
             </div>
         </div>
     )

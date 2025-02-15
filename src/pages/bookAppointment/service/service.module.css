@@ -39,6 +39,7 @@
     background-color: white;
     color: black;
     outline: #DD88CF;
+    text-transform: capitalize;
 }
 
 .option {

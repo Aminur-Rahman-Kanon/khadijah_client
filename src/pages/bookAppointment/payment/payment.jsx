@@ -37,7 +37,7 @@ const Payment = ({ userInput, price }) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>
-                <h2 className={styles.headingLargeBlack}>Great, that will be {price/100 || 0}.</h2>
+                <h2 className={styles.headingLargeBlack}>Great, that will be &#163;{price/100 || 0}.</h2>
             </div>
             <div className={styles.payment}>
                 {

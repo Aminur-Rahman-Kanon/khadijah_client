@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './massages.module.css';
 import bg from '../../assets/massages/5.jpg';
 import { massage } from '../../data/data';
@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 import border from '../../assets/others/horizontal_line.png';
 
 const Massages = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     const displayMassages = Object.values(massage).map(m => <div className={styles.item}>
         <div className={styles.smallBgContainer}>
