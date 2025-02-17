@@ -33,7 +33,7 @@ const Massage = ({ selectService }) => {
             {
                 msg.benefit.length ?
                 <div className={styles.item}>
-                    <h3 className={styles.headerSmallBlack}>benefits:</h3>
+                    <h3 className={styles.headerSmallBlack}>Benefits:</h3>
                     {<ul className={styles.listContainer}>
                         {msg.benefit.map((b, i) => <li key={i} className={styles.list}>{b}</li>)}
                     </ul>
@@ -44,14 +44,14 @@ const Massage = ({ selectService }) => {
             }
 
             <div className={styles.item}>
-                <h3 className={styles.headerSmallBlack}>does it hurt?</h3>
+                <h3 className={styles.headerSmallBlack}>Does it hurt?</h3>
                 <p className={styles.textSmallBlack}>{msg.optional}</p>
             </div>
 
             {
                 msg.preTreatment.length ?
                 <div className={styles.item}>
-                    <h3 className={styles.headerSmallBlack}>pre-treatment:</h3>
+                    <h3 className={styles.headerSmallBlack}>Pre-treatment:</h3>
                     <ul className={styles.listContainer}>
                         {msg.preTreatment.map((p, i) => <li key={i+10} className={styles.list}>{p}</li>)}
                     </ul>
@@ -63,7 +63,7 @@ const Massage = ({ selectService }) => {
             {
                 msg.afterCare.length ?
                 <div className={styles.item}>
-                    <h3 className={styles.headerSmallBlack}>aftercare:</h3>
+                    <h3 className={styles.headerSmallBlack}>Aftercare:</h3>
                     <ul className={styles.listContainer}>
                         {msg.afterCare.map((c, i) => <li key={i+20} className={styles.list}>{c}</li>)}
                     </ul>        
@@ -74,7 +74,7 @@ const Massage = ({ selectService }) => {
         </div>
         :
         <div className={styles.left}>
-            no information
+            No information
         </div>
 
     return (
@@ -118,7 +118,6 @@ const Massage = ({ selectService }) => {
                 </div>
             </div>
             <div className={styles.footer}>
-                <HealthBenefit />
                 <Map />
             </div>
         </div>

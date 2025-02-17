@@ -33,8 +33,8 @@ const Footer = () => {
             <div className={styles.address}>
                 <div className={styles.content}>
                     <h3 className={styles.headerSmallWhite}>address</h3>
-                    <span className={styles.textSmallWhite}>7 well court</span>
-                    <span className={styles.textSmallWhite}>city of london, ec4m 9dn</span>
+                    <span className={styles.textSmallWhite}>Beauty Essense as DP, 7 well court</span>
+                    <span className={styles.textSmallWhite}>city of london, EC4M 9DN</span>
                 </div>
                 <div className={styles.socialLink}>
                     <Sociallink style={'largePink'}/>

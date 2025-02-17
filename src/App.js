@@ -22,6 +22,7 @@ const BookAppointment = lazy(() => import('./pages/bookAppointment/bookAppointme
 const Service = lazy(() => import('./pages/bookAppointment/service/service'));
 const About = lazy(() => import('./pages/about/about'));
 const Contact = lazy(() => import('./pages/contact/contact'));
+const Faq = lazy(() => import('./pages/faq/faq'));
 
 function App() {
 
@@ -72,6 +73,8 @@ function App() {
             <Route path='/massages' element={<SuspenseModule><Massages /></SuspenseModule>}/>
             <Route path='/about' element={<SuspenseModule><About /></SuspenseModule>}/>
             <Route path='/contact' element={<SuspenseModule><Contact /></SuspenseModule>}/>
+            <Route path='/contact' element={<SuspenseModule><Contact /></SuspenseModule>}/>
+            <Route path='/faqs' element={<SuspenseModule><Faq /></SuspenseModule>}/>
         </Routes>
         <Footer />
       </div>

@@ -28,11 +28,11 @@ const Banner = () => {
                     </div>
                     <div className={styles.banner}>
                         <h1 className={styles.headingLargeWhite}>
-                            <span className={styles.headingHead}>welcome to</span>
-                            <span className={styles.headingMiddle}>divine touch by</span>
-                            <span className={styles.headingTail}>ola.</span>
+                            <span className={styles.headingHead}>Welcome to</span>
+                            <span className={styles.headingMiddle}>Divine Touch by</span>
+                            <span className={styles.headingTail}>Ola.</span>
                         </h1>
-                        <h3 className={styles.headingSmallWhite}>A place of well-being where you reset, recharge and restore.</h3>
+                        <h3 className={styles.headingSmallWhite}>A place of well-being where you Reset, Recharge and Restore.</h3>
                         <div className={styles.btn}>
                             <BookNow path={'/bookings/'}/>
                         </div>
@@ -45,10 +45,10 @@ const Banner = () => {
                     <div className={styles.banner}>
                         <h1 className={styles.headingLargeWhite}>
                             <span className={styles.headingHead}>Welcome to</span>
-                            <span className={styles.headingMiddle}>our</span>
-                            <span className={styles.headingTail}>welness sanctuary.</span>
+                            <span className={styles.headingMiddle}>Our</span>
+                            <span className={styles.headingTail}>Welness sanctuary.</span>
                         </h1>
-                        <h3 className={styles.headingSmallWhite}>you owe yourself this moment. book appointment in just a click!</h3>
+                        <h3 className={styles.headingSmallWhite}>You owe yourself this moment. book appointment in just a click!</h3>
                         <div className={styles.btn}>
                             <BookNow path={'/bookings/'}/>
                         </div>
@@ -61,8 +61,8 @@ const Banner = () => {
                     <div className={styles.banner}>
                         <h1 className={styles.headingLargeWhite}>
                             <span className={styles.headingHead}>Experience</span>
-                            <span className={styles.headingMiddle}>Experience the ultimate in</span>
-                            <span className={styles.headingTail}>massage therapy.</span>
+                            <span className={styles.headingMiddle}>the Ultimate in</span>
+                            <span className={styles.headingTail}>Massage Therapy.</span>
                         </h1>
                         <h3 className={styles.headingSmallWhite}>Treat yourself to this moment—book your appointment with just one click!</h3>
                         <div className={styles.btn}>

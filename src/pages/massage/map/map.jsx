@@ -12,7 +12,7 @@ const Map = () => {
                     <div className={styles.iconContainer}>
                         <FontAwesomeIcon icon={faMapPin} className={styles.icon}/>
                     </div>
-                    <span className={styles.textExtraSmallBlack}>Ground Floor, Light centre Monument, 36 St Mary at Hill, City of London, London EC3R 8DU</span>
+                    <span className={styles.textExtraSmallBlack}>Beauty Essence as DP, 7 Well Court, London, England, EC4M 9DN</span>
                 </div>
                 <div className={styles.item}>
                     <div className={styles.iconContainer}>

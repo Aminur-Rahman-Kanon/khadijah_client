@@ -32,6 +32,11 @@ const Navbar = ({ toggleNestedList }) => {
                         contact
                     </a>
                 </li>
+                <li className={styles.item}>
+                    <a href='/faqs' className={styles.link}>
+                        faq
+                    </a>
+                </li>
             </ul>
         </div>
     )

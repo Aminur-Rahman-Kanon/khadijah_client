@@ -111,7 +111,7 @@ const Contact = () => {
                         </div>
                         <a href='' className={styles.textContainer}>
                             <h3 className={styles.headingExtraSmallBlack}>Location</h3>
-                            <span className={styles.textExtraSmallBlack}>7 well court, london, england, EC4M 9DN</span>
+                            <span className={styles.textExtraSmallBlack}>Beauty Essense as DP, 7 well court, london, england, EC4M 9DN</span>
                         </a>
                     </div>
                     <div className={styles.iconFluid}>

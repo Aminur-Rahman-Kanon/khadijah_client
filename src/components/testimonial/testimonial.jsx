@@ -40,7 +40,7 @@ const Testimonial = () => {
                                     <hr className='borderLine'/>
                                 </div>
                                 <div className='nameContainer'>
-                                    <h3 className='headingMediumGray'>Sarah M.</h3>
+                                    <h3 className='headingMediumGray'>Sarah M</h3>
                                     <div className='ratingContainer'>
                                         <div className='rating'>
                                             <FontAwesomeIcon icon={faStar} className='ratingIcon'/>
@@ -63,11 +63,6 @@ const Testimonial = () => {
                         </div>
                         <div className='bannerMain'>
                         <div className='bannerBg'>
-                                {/* <div className='bgContainer'>
-                                    <div className='profileContainer'>
-                                        <img src={p2} alt='person' className='profile' />
-                                    </div>
-                                </div> */}
                                 <div className='borderContainer'>
                                     <img src={border} alt='border' className='border'/>
                                 </div>
@@ -82,7 +77,7 @@ const Testimonial = () => {
                                     <hr className='borderLine'/>
                                 </div>
                                 <div className='nameContainer'>
-                                    <h3 className='headingMediumGray'>james l.</h3>
+                                    <h3 className='headingMediumGray'>James L</h3>
                                     <div className='ratingContainer'>
                                         <div className='rating'>
                                             <FontAwesomeIcon icon={faStar} className='ratingIcon'/>
@@ -105,11 +100,6 @@ const Testimonial = () => {
                         </div>
                         <div className='bannerMain'>
                         <div className='bannerBg'>
-                                {/* <div className='bgContainer'>
-                                    <div className='profileContainer'>
-                                        <img src={p3} alt='person' className='profile' />
-                                    </div>
-                                </div> */}
                                 <div className='borderContainer'>
                                     <img src={border} alt='border' className='border'/>
                                 </div>
@@ -124,7 +114,7 @@ const Testimonial = () => {
                                     <hr className='borderLine'/>
                                 </div>
                                 <div className='nameContainer'>
-                                    <h3 className='headingMediumGray'>emily r.</h3>
+                                    <h3 className='headingMediumGray'>Emily R</h3>
                                     <div className='ratingContainer'>
                                         <div className='rating'>
                                             <FontAwesomeIcon icon={faStar} className='ratingIcon'/>

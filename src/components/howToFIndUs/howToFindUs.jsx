@@ -13,7 +13,7 @@ const HowToFindUs = () => {
                         <h2 className={styles.headingMediumBlack}>Divine Touch by Ola is situated inside <strong>Beauty Essence</strong>. Directions are provided below.</h2>
                     </div>
                     <div className={styles.item}>
-                        <h3 className={styles.headingSmallBlack}>bank tube - northern line</h3>
+                        <h3 className={styles.headingSmallBlack}>Bank tube - Northern line</h3>
                         <ul className={styles.lists}>
                             <li className={styles.list}>On the platform head toward the “Bank of England” exit</li>
                             <li className={styles.list}>Exit  – to “Cannon Street'</li>
@@ -28,7 +28,7 @@ const HowToFindUs = () => {
                         </ul>
                     </div>
                     <div className={styles.item}>
-                        <h3 className={styles.headingSmallBlack}>bank tube - central line</h3>
+                        <h3 className={styles.headingSmallBlack}>Bank tube - Central line</h3>
                         <ul className={styles.lists}>
                             <li className={styles.list}>On the platform head toward the “Bank of England” exit</li>
                             <li className={styles.list}>Exit  – to “Cheapside”</li>
@@ -43,7 +43,7 @@ const HowToFindUs = () => {
                         </ul>
                     </div>
                     <div className={styles.item}>
-                        <h3 className={styles.headingSmallBlack}>mansion house tube</h3>
+                        <h3 className={styles.headingSmallBlack}>Mansion house tube</h3>
                         <ul className={styles.lists}>
                             <li className={styles.list}>Tube Exit 4 – “Bow Lane Shops”</li>
                             <li className={styles.list}>Turn left onto Bow Lane</li>

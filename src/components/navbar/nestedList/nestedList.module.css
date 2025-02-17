@@ -24,7 +24,8 @@
     color: rgb(77, 77, 77);
     text-align: center;
     text-decoration: none;
-    transition: color 0.7s ease
+    transition: color 0.7s ease;
+    text-transform: capitalize;
 }
 
 .nestedLink:hover {
