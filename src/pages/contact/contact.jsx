@@ -118,12 +118,12 @@ const Contact = () => {
                         <div className={styles.iconContainer}>
                             <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
                         </div>
-                        <a href='' className={styles.textContainer}>
+                        <a href='mailto: nfo@divinetouchbyola.com' className={styles.textContainer}>
                             <h3 className={styles.headingExtraSmallBlack}>Email</h3>
-                            <span className={styles.textExtraSmallBlack}>info@khadijah.net</span>
+                            <span className={styles.textExtraSmallBlack}>info@divinetouchbyola.com</span>
                         </a>
                     </div>
-                    <div className={styles.iconFluid}>
+                    {/* <div className={styles.iconFluid}>
                         <div className={styles.iconContainer}>
                             <FontAwesomeIcon icon={faPhone} className={styles.icon} />
                         </div>
@@ -131,7 +131,7 @@ const Contact = () => {
                             <h3 className={styles.headingExtraSmallBlack}>Phone</h3>
                             <span className={styles.textExtraSmallBlack}>+447950 999 729</span>
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className={styles.border}></div>

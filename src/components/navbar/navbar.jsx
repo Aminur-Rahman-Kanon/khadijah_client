@@ -23,6 +23,11 @@ const Navbar = ({ toggleNestedList }) => {
                     </div>
                 </li>
                 <li className={styles.item}>
+                    <a href='/packages' className={styles.link}>
+                        packages
+                    </a>
+                </li>
+                <li className={styles.item}>
                     <a href='/about' className={styles.link}>
                         about
                     </a>

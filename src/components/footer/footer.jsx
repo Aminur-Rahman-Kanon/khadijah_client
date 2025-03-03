@@ -27,14 +27,17 @@ const Footer = () => {
         <div className={styles.rightItem}>
             <div className={styles.contact}>
                 <h3 className={styles.headerSmallWhite}>say hello</h3>
-                <a href='tel:00447950999729' className={styles.tel}>+447950999729</a>
-                <a href='mailto:info@pacificlift.net' className={styles.tel}>info@khadijah.net</a>
+                {/* <a href='tel:00447950999729' className={styles.tel}>+447950999729</a> */}
+                <a href='mailto:info@divinetouchbyola.com' className={styles.tel}>info@divinetouchbyola.com</a>
             </div>
             <div className={styles.address}>
                 <div className={styles.content}>
                     <h3 className={styles.headerSmallWhite}>address</h3>
-                    <span className={styles.textSmallWhite}>Beauty Essense as DP, 7 well court</span>
-                    <span className={styles.textSmallWhite}>city of london, EC4M 9DN</span>
+                    <span className={styles.textSmallWhite}>Divine Touch by Ola</span>
+                    <span className={styles.textSmallWhite}>Inside Beauty Essence</span>
+                    <span className={styles.textSmallWhite}>7 well court</span>
+                    <span className={styles.textSmallWhite}>city of london</span>
+                    <span className={styles.textSmallWhite}>EC4M 9DN</span>
                 </div>
                 <div className={styles.socialLink}>
                     <Sociallink style={'largePink'}/>
